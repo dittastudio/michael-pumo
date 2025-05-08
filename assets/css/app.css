@@ -1,0 +1,96 @@
+@import "./resets.css";
+@import "./page.css";
+@import "./fonts.css";
+@import "./transitions.css";
+@import "tailwindcss";
+
+@theme {
+  --color-\*: initial;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-offblack: #111111;
+  --color-grey: #565656;
+  --color-grey-light: #d9d9d9;
+
+  --color-blue: #0c8ce9;
+  --color-green: #7ffd59;
+  /* C1FFA5 */
+  --color-peach: #fec1b3; 
+  /* FFBBA5 */
+  --color-purple: #d49efe;
+  --color-red: #fd7259;
+  --color-yellow: #fde259;
+
+  --color-primary: var(--color-black);
+  --color-secondary: var(--color-offblack);
+  --color-heading: var(--color-white);
+  --color-muted: var(--color-grey);
+  --color-accent: var(--color-peach);
+
+  --breakpoint-\*: initial;
+  --breakpoint-2xs: 375px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 800px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1800px;
+
+  --spacing-\*: initial;
+  --spacing: 5px;
+
+  --font-\*: initial;
+  --font-sans: "Saans", sans-serif, system-ui;
+
+  --text-\*: initial;
+  --text-12: 0.75rem;
+  --text-12--line-height: 1.3;
+  --text-12--letter-spacing: -0.005em;
+
+  --text-14: 0.875rem;
+  --text-14--line-height: 1.3;
+  --text-14--letter-spacing: -0.005em;
+
+  --text-16: 1rem;
+  --text-16--line-height: 1.3;
+  --text-16--letter-spacing: -0.005em;
+
+  --text-18: 1.125rem;
+  --text-18--line-height: 1.3;
+  --text-18--letter-spacing: -0.005em;
+
+  --text-26: 1.625rem;
+  --text-26--line-height: 1.3;
+  --text-26--letter-spacing: -0.005em;
+
+  --text-30: 1.875rem;
+  --text-30--line-height: 1.3;
+  --text-30--letter-spacing: -0.005em;
+
+  --text-48: 3rem;
+  --text-48--line-height: 1.3;
+  --text-48--letter-spacing: -0.005em;
+
+  --tracking-\*: initial;
+  --tracking-sm: 0.04em;
+  --tracking-md: 0.06em;
+  --tracking-lg: 0.15em;
+
+  --ease-\*: initial;
+  --ease-inExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-outExpo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-inOutExpo: cubic-bezier(1, 0, 0, 1);
+  --ease-inQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-outQuart: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-inOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+:root {
+  --app-inner-gutter: --spacing(3);
+  --app-outer-gutter: clamp(24px, 12.5714px + 3.5714vw, 64px);
+
+  /* @variant md {
+    --app-inner-gutter: --spacing(6);
+  } */
+}

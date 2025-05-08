@@ -1,0 +1,34 @@
+@layer base {
+  *::selection {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+
+  html {
+    text-size-adjust: none;
+    text-rendering: optimizeLegibility;
+    color: var(--color-muted);
+    background-color: var(--color-primary);
+
+    &.theme-light {
+      --color-primary: var(--color-white);
+      --color-secondary: var(--color-grey-light);
+      --color-heading: var(--color-black);
+      --color-accent: var(--color-blue);
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: var(--breakpoint-2xl);
+    margin-inline: auto;
+    padding-inline: var(--app-outer-gutter);
+  }
+}
