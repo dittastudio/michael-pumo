@@ -14,9 +14,24 @@ const { content } = defineProps<Props>()
       v-for="(block) in content.blocks"
       :key="block._uid"
     >
+      <BlockHero
+        v-if="block.component === 'block_hero'"
+        :block
+      />
+
+      <BlockPlay
+        v-else-if="block.component === 'block_play'"
+        :block
+      />
+
+      <BlockProjects
+        v-else-if="block.component === 'block_projects'"
+        :block
+      />
+
       <BlockText
-        v-if="block.component === 'block_text'"
-        :block="block"
+        v-else-if="block.component === 'block_text'"
+        :block
       />
     </section>
   </div>

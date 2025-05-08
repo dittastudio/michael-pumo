@@ -1,15 +1,13 @@
-@layer base {
+@layer theme {
   *::selection {
-    background-color: var(--color-blue);
-    color: var(--color-white);
+    background-color: var(--color-peach);
+    color: var(--color-black);
   }
 
   html {
     text-size-adjust: none;
     text-rendering: optimizeLegibility;
-    color: var(--color-muted);
-    background-color: var(--color-primary);
-
+    
     &.theme-light {
       --color-primary: var(--color-white);
       --color-secondary: var(--color-grey-light);
@@ -17,18 +15,45 @@
       --color-accent: var(--color-blue);
     }
   }
-
+  
   body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
+    color: var(--color-muted);
+    background-color: var(--color-primary);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
+    /* &:hover,
+    &:focus {
+      color: var(--color-peach);
+      text-decoration: underline;
+    }
+    &:active {
+      color: var(--color-red);
+    }
+    &:visited {
+      color: var(--color-peach);
+    } */
   }
 
   .wrapper {
     width: 100%;
     max-width: var(--breakpoint-2xl);
     margin-inline: auto;
-    padding-inline: var(--app-outer-gutter);
+
+    &-x {
+      padding-inline: var(--app-outer-gutter);
+    }
+
+    &-y {
+      padding-block: var(--app-outer-gutter);
+    }
   }
 }

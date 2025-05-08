@@ -42,7 +42,7 @@
       "display_name": "Hero",
       "description": "",
       "created_at": "2025-05-08T12:48:09.261Z",
-      "updated_at": "2025-05-08T15:35:18.199Z",
+      "updated_at": "2025-05-08T19:06:52.394Z",
       "id": 7316289,
       "schema": {
         "signal": {
@@ -61,9 +61,27 @@
           "allow_target_blank": true,
           "id": "lkljPtMZQSO93Y7jHFjTkQ"
         },
+        "cta": {
+          "type": "text",
+          "pos": 3,
+          "email_link_type": true,
+          "asset_link_type": true,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "id": "FnAMNze3QimGDpl9Ba30Mw"
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 4,
+          "email_link_type": true,
+          "asset_link_type": true,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "id": "l48fmmctTgiFw3_MvsDb4g"
+        },
         "media": {
           "type": "asset",
-          "pos": 3,
+          "pos": 5,
           "filetypes": [
             "videos",
             "images"
@@ -72,18 +90,9 @@
         },
         "footnote": {
           "type": "richtext",
-          "pos": 4,
+          "pos": 6,
           "allow_target_blank": true,
           "id": "TPu_e1ZAQ3-eqPXBbAeF1g"
-        },
-        "cta": {
-          "type": "multilink",
-          "pos": 5,
-          "email_link_type": true,
-          "asset_link_type": true,
-          "show_anchor": true,
-          "allow_target_blank": true,
-          "id": "FnAMNze3QimGDpl9Ba30Mw"
         }
       },
       "image": null,
@@ -207,12 +216,14 @@
       "display_name": null,
       "description": null,
       "created_at": "2025-05-08T12:44:10.640Z",
-      "updated_at": "2025-05-08T12:44:10.640Z",
+      "updated_at": "2025-05-08T15:39:51.325Z",
       "id": 7316283,
       "schema": {
-        "body": {
+        "blocks": {
           "type": "bloks",
-          "id": "SCPyjgaCT3el_3V4kVXaCQ"
+          "id": "SCPyjgaCT3el_3V4kVXaCQ",
+          "display_name": "Blocks",
+          "pos": 0
         }
       },
       "image": null,
