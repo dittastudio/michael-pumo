@@ -11,10 +11,10 @@ const { block } = defineProps<Props>()
 <template>
   <div
     v-editable="block"
-    class="wrapper wrapper-x wrapper-y"
+    class="w-full"
     :class="block.background"
   >
-    <div class="w-full">
+    <div class="wrapper wrapper-x wrapper-y">
       <h3
         v-if="block.headline"
         class="text-48 mb-7 text-heading"
@@ -28,6 +28,10 @@ const { block } = defineProps<Props>()
       >
         <StoryblokText :html="block.text" />
       </div>
+    </div>
+
+    <div class="wrapper wrapper-x">
+      <UiCarousel />
     </div>
   </div>
 </template>
