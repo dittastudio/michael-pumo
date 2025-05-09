@@ -14,7 +14,7 @@ const { block } = defineProps<Props>()
     class="w-full overflow-x-hidden"
     :class="block.background"
   >
-    <div class="wrapper wrapper-x wrapper-y">
+    <div class="px-gutter pt-gutter pb-gutter-md">
       <h3
         v-if="block.headline"
         class="text-48 mb-7 text-heading"
@@ -24,13 +24,11 @@ const { block } = defineProps<Props>()
 
       <div
         v-if="storyblokRichTextContent(block.text)"
-        class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
+        class="pb-gutter [&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
       >
         <StoryblokText :html="block.text" />
       </div>
-    </div>
 
-    <div class="wrapper wrapper-x">
       <UiCarousel :items="block.projects">
         <template #item="{ headline, link, media }">
           <StoryblokLink

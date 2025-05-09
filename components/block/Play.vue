@@ -11,7 +11,7 @@ const { block } = defineProps<Props>()
 <template>
   <div
     v-editable="block"
-    class="wrapper wrapper-x wrapper-y"
+    class="p-gutter"
     :class="block.background"
   >
     <div class="w-full">

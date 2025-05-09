@@ -9,18 +9,39 @@ interface Props {
 
 const { items } = defineProps<Props>()
 
+const ready = ref(false)
 const amount = items?.length ?? 0
-const perView = 4
+const perView = ref(4)
 const collection = ref(1)
 
+const isXs = useAtMedia('(max-width: 479px)')
+const isSm = useAtMedia('(min-width: 480px) and (max-width: 799px)')
+const isMd = useAtMedia('(min-width: 800px) and (max-width: 1199px)')
+const isLg = useAtMedia('(min-width: 1200px)')
+
+const setPerView = () => {
+  if (isXs.value) {
+    perView.value = 1
+  }
+  else if (isSm.value) {
+    perView.value = 2
+  }
+  else if (isMd.value) {
+    perView.value = 3
+  }
+  else if (isLg.value) {
+    perView.value = 4
+  }
+}
+
 const groups = computed(() => {
-  const totalGroups = Math.ceil(amount / perView)
+  const totalGroups = Math.ceil(amount / perView.value)
 
   const payload = Array.from({ length: totalGroups }).map((_, idx) => {
-    const index = idx * perView
+    const index = idx * perView.value
 
     return {
-      start: index + perView > amount ? amount - perView : index,
+      start: index + perView.value > amount ? amount - perView.value : index,
       collection: idx + 1,
     }
   })
@@ -51,16 +72,43 @@ const getGroup = (num: number) => {
 }
 
 const [container, slider] = useKeenSlider({
-  initial: 0,
   loop: false,
   mode: 'free-snap',
+  dragSpeed: 0.5,
+  rubberband: false,
   defaultAnimation: {
     duration: 1000,
     // easing: (t) => t,
   },
   slides: {
-    perView,
+    perView: 1,
     spacing: 16,
+  },
+  breakpoints: {
+    '(min-width: 480px)': {
+      slides: {
+        perView: 2,
+        spacing: 16,
+      },
+    },
+    '(min-width: 800px)': {
+      slides: {
+        perView: 3,
+        spacing: 16,
+      },
+    },
+    '(min-width: 1200px)': {
+      slides: {
+        perView: 4,
+        spacing: 16,
+      },
+    },
+  },
+  created() {
+    setPerView()
+  },
+  optionsChanged() {
+    setPerView()
   },
   slideChanged(s) {
     const slideIndex = s.track.details.rel
@@ -69,10 +117,19 @@ const [container, slider] = useKeenSlider({
     collection.value = group.collection
   },
 })
+
+onMounted(() => {
+  ready.value = true
+})
 </script>
 
 <template>
-  <div>
+  <div
+    class="w-full transition-opacity duration-500 ease-in-out"
+    :class="{
+      'opacity-0': !ready,
+    }"
+  >
     <div
       v-if="slider"
       class="flex items-center justify-between mb-8"

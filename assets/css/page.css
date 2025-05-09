@@ -28,19 +28,6 @@
   a {
     color: var(--color-accent);
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
-
-    /* &:hover,
-    &:focus {
-      color: var(--color-peach);
-      text-decoration: underline;
-    }
-    &:active {
-      color: var(--color-red);
-    }
-    &:visited {
-      color: var(--color-peach);
-    } */
   }
 
   .wrapper {
@@ -54,12 +41,6 @@
 
     &-y {
       padding-block: var(--app-outer-gutter);
-    }
-  }
-
-  .gutter {
-    &-y-lg {
-      padding-block: var(--app-gutter-y-lg);
     }
   }
 }

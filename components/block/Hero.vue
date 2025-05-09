@@ -16,7 +16,7 @@ const { block } = defineProps<Props>()
       class="min-h-svh grid grid-cols-2"
       :class="block.background"
     >
-      <div class="wrapper wrapper-x wrapper-y flex flex-col items-start justify-between">
+      <div class="w-full p-gutter flex flex-col items-start justify-between">
         <ElementChip text="Open for new projects" />
 
         <div class="w-full my-auto flex flex-col items-start justify-center gap-7">
