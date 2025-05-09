@@ -56,4 +56,10 @@
       padding-block: var(--app-outer-gutter);
     }
   }
+
+  .gutter {
+    &-y-lg {
+      padding-block: var(--app-gutter-y-lg);
+    }
+  }
 }

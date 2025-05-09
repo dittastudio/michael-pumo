@@ -91,13 +91,10 @@
 }
 
 @layer theme {
+  /* https://clamp-calculator.netlify.app/ */
   :root {
     --app-inner-gutter: --spacing(3);
-    /* --app-outer-gutter: clamp(24px, 12.5714px + 3.5714vw, 64px); */
-    --app-outer-gutter: clamp(24px, 8.5714px + 4.8571vw, 80px);
-
-    /* @variant md {
-      --app-inner-gutter: --spacing(6);
-    } */
+    --app-outer-gutter: clamp(24px, -11.897px + 8.974vw, 80px);
+    --app-gutter-y-lg: clamp(80px, -9.744px + 22.436vw, 220px);
   }
 }
