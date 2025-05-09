@@ -125,12 +125,16 @@ export interface BlockHeroStoryblok {
   link?: MultilinkStoryblok;
   media?: AssetStoryblok;
   footnote?: RichtextStoryblok;
+  background: number | string;
   component: "block_hero";
   _uid: string;
   [k: string]: any;
 }
 
 export interface BlockPlayStoryblok {
+  headline?: string;
+  text?: RichtextStoryblok;
+  background: number | string;
   component: "block_play";
   _uid: string;
   [k: string]: any;
@@ -139,6 +143,7 @@ export interface BlockPlayStoryblok {
 export interface BlockProjectsStoryblok {
   headline?: string;
   text?: RichtextStoryblok;
+  background: number | string;
   component: "block_projects";
   _uid: string;
   [k: string]: any;
@@ -147,6 +152,7 @@ export interface BlockProjectsStoryblok {
 export interface BlockTextStoryblok {
   headline?: string;
   text?: RichtextStoryblok;
+  background: number | string;
   component: "block_text";
   _uid: string;
   [k: string]: any;

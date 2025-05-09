@@ -20,6 +20,7 @@
     "@tailwindcss/vite": "^4.1.5",
     "@vueuse/core": "^13.1.0",
     "keen-slider": "^6.8.6",
+    "lucide-vue-next": "^0.509.0",
     "nuxt": "^3.17.2",
     "postcss-nested": "^7.0.2",
     "tailwindcss": "^4.1.5",
