@@ -24,7 +24,7 @@
 
   --color-primary: var(--color-black);
   --color-secondary: var(--color-offblack);
-  --color-heading: var(--color-white);
+  --color-tertiary: var(--color-white);
   --color-muted: var(--color-grey);
   --color-accent: var(--color-peach);
 
@@ -38,7 +38,7 @@
   --breakpoint-2xl: 1800px;
 
   --radius-\*: initial;
-  --radius-5: 5px;
+  --radius-10: 10px;
   --radius-30: 30px;
 
   --spacing-\*: initial;

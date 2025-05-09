@@ -14,8 +14,13 @@ const { content } = defineProps<Props>()
       v-for="(block) in content.blocks"
       :key="block._uid"
     >
+      <BlockBento
+        v-if="block.component === 'block_bento'"
+        :block
+      />
+
       <BlockHero
-        v-if="block.component === 'block_hero'"
+        v-else-if="block.component === 'block_hero'"
         :block
       />
 

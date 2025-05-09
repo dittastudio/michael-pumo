@@ -17,12 +17,15 @@ const { block } = defineProps<Props>()
       :class="block.background"
     >
       <div class="w-full min-h-svh md:min-h-auto p-gutter flex flex-col items-start justify-between">
-        <ElementChip text="Open for new projects" />
+        <ElementChip
+          v-if="block.signal"
+          text="Open for new projects"
+        />
 
         <div class="w-full my-auto flex flex-col items-start justify-center gap-7">
           <h1
             v-if="block.headline"
-            class="text-48 text-heading max-w-[18ch]"
+            class="text-48 text-tertiary max-w-[18ch]"
           >
             {{ block.headline }}
           </h1>

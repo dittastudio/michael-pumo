@@ -144,7 +144,7 @@ onMounted(() => {
           <span class="sr-only">Go to group {{ group.collection }}</span>
 
           <span
-            class="block size-2 rounded-full shrink-0 bg-heading transition-opacity duration-200 ease-out"
+            class="block size-2 rounded-full shrink-0 bg-tertiary transition-opacity duration-200 ease-out"
             :class="{
               'opacity-30': group.collection !== collection,
             }"
@@ -160,7 +160,7 @@ onMounted(() => {
         >
           <span class="sr-only">Go to previous item</span>
 
-          <ChevronLeft class="text-heading size-full fill-none" />
+          <ChevronLeft class="text-tertiary size-full fill-none" />
         </button>
 
         <button
@@ -170,7 +170,7 @@ onMounted(() => {
         >
           <span class="sr-only">Go to next item</span>
 
-          <ChevronRight class="text-heading size-full fill-none" />
+          <ChevronRight class="text-tertiary size-full fill-none" />
         </button>
       </div>
     </div>
@@ -182,7 +182,7 @@ onMounted(() => {
       <li
         v-for="item in items"
         :key="item"
-        class="keen-slider__slide w-full aspect-[2/3] bg-secondary rounded-5"
+        class="keen-slider__slide w-full aspect-[2/3] bg-secondary rounded-10"
       >
         <slot
           name="item"

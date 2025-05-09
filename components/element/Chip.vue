@@ -14,7 +14,7 @@ const backgroundColor = {
 </script>
 
 <template>
-  <p class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-1.5 rounded-30 bg-primary text-14 text-heading">
+  <p class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-1.5 rounded-30 bg-primary text-14 text-tertiary">
     <span :class="[backgroundColor[color], 'block size-2 rounded-full shrink-0']" />
 
     {{ text }}

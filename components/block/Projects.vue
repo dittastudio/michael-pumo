@@ -14,10 +14,10 @@ const { block } = defineProps<Props>()
     class="w-full overflow-x-hidden"
     :class="block.background"
   >
-    <div class="px-gutter pt-gutter pb-gutter-md">
+    <div class="w-full px-gutter pt-20 pb-50">
       <h3
         v-if="block.headline"
-        class="text-48 mb-7 text-heading"
+        class="text-48 mb-7 text-tertiary"
       >
         {{ block.headline }}
       </h3>
@@ -50,7 +50,7 @@ const { block } = defineProps<Props>()
               v-if="headline"
               class="absolute inset-0 flex items-center justify-center"
             >
-              <h4 class="text-30 text-heading transition-all duration-500 ease-in-out translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0">
+              <h4 class="text-30 text-tertiary transition-all duration-500 ease-in-out translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0">
                 {{ headline }}
               </h4>
             </div>

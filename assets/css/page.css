@@ -11,7 +11,7 @@
     &.theme-light {
       --color-primary: var(--color-white);
       --color-secondary: var(--color-grey-light);
-      --color-heading: var(--color-black);
+      --color-tertiary: var(--color-black);
       --color-accent: var(--color-blue);
     }
   }

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { BlockTextStoryblok } from '@/types/storyblok'
+import type { BlockBentoStoryblok } from '@/types/storyblok'
 
 interface Props {
-  block: BlockTextStoryblok
+  block: BlockBentoStoryblok
 }
 
 const { block } = defineProps<Props>()
@@ -11,20 +11,20 @@ const { block } = defineProps<Props>()
 <template>
   <div
     v-editable="block"
-    class="w-full px-gutter py-gutter-lg"
+    class="w-full"
     :class="block.background"
   >
-    <div class="w-full mx-auto md:max-w-[615px]">
+    <div class="w-full px-gutter pt-20 pb-50">
       <h3
         v-if="block.headline"
-        class="text-18 mb-2"
+        class="text-48 mb-7 text-tertiary"
       >
         {{ block.headline }}
       </h3>
 
       <div
         v-if="storyblokRichTextContent(block.text)"
-        class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-(--color-tertiary) [&]:text-26"
+        class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
       >
         <StoryblokText :html="block.text" />
       </div>
