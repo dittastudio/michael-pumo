@@ -13,10 +13,10 @@ const { block } = defineProps<Props>()
     v-editable="block"
   >
     <div
-      class="min-h-svh grid grid-cols-2"
+      class="md:min-h-svh grid md:grid-cols-2"
       :class="block.background"
     >
-      <div class="w-full p-gutter flex flex-col items-start justify-between">
+      <div class="w-full min-h-svh md:min-h-auto p-gutter flex flex-col items-start justify-between">
         <ElementChip text="Open for new projects" />
 
         <div class="w-full my-auto flex flex-col items-start justify-center gap-7">
