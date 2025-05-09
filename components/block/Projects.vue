@@ -31,7 +31,34 @@ const { block } = defineProps<Props>()
     </div>
 
     <div class="wrapper wrapper-x">
-      <UiCarousel />
+      <UiCarousel :items="block.projects">
+        <template #item="{ headline, link, media }">
+          <StoryblokLink
+            :item="link"
+            class="group block relative size-full"
+          >
+            <NuxtImg
+              v-if="media?.filename && storyblokAssetType(media.filename) === 'image'"
+              class="size-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-20 group-focus:opacity-20"
+              :src="media.filename"
+              provider="storyblok"
+              width="1000"
+              format="webp"
+              quality="80"
+              :modifiers="{ smart: true }"
+            />
+
+            <div
+              v-if="headline"
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <h4 class="text-30 text-heading transition-all duration-500 ease-in-out translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0">
+                {{ headline }}
+              </h4>
+            </div>
+          </StoryblokLink>
+        </template>
+      </UiCarousel>
     </div>
   </div>
 </template>

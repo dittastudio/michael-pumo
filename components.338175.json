@@ -35,7 +35,7 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "metadata": {},
-      "component_group_name": "Block"
+      "component_group_name": "Blocks"
     },
     {
       "name": "block_hero",
@@ -127,7 +127,7 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "metadata": {},
-      "component_group_name": "Block"
+      "component_group_name": "Blocks"
     },
     {
       "name": "block_play",
@@ -182,14 +182,14 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "metadata": {},
-      "component_group_name": "Block"
+      "component_group_name": "Blocks"
     },
     {
       "name": "block_projects",
       "display_name": "Projects",
       "description": "",
       "created_at": "2025-05-08T12:49:41.409Z",
-      "updated_at": "2025-05-08T20:39:56.161Z",
+      "updated_at": "2025-05-09T13:25:43.078Z",
       "id": 7316291,
       "schema": {
         "headline": {
@@ -211,9 +211,19 @@
             "paragraph"
           ]
         },
+        "projects": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "project"
+          ],
+          "id": "y6jP5r2MS1WeZlN0yMIIbg"
+        },
         "background": {
           "type": "option",
-          "pos": 2,
+          "pos": 3,
           "use_uuid": true,
           "required": true,
           "source": "internal",
@@ -237,7 +247,7 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "metadata": {},
-      "component_group_name": "Block"
+      "component_group_name": "Blocks"
     },
     {
       "name": "block_text",
@@ -284,7 +294,7 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "metadata": {},
-      "component_group_name": "Block"
+      "component_group_name": "Blocks"
     },
     {
       "name": "page",
@@ -317,13 +327,80 @@
       "content_type_asset_preview": null,
       "metadata": {},
       "component_group_name": "Types"
+    },
+    {
+      "name": "project",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-05-09T13:23:40.534Z",
+      "updated_at": "2025-05-09T13:25:13.629Z",
+      "id": 7321557,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "id": "pYSmzhonRw-7dvbnkT5bUw"
+        },
+        "text": {
+          "type": "richtext",
+          "pos": 1,
+          "allow_target_blank": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "color",
+            "italic",
+            "link",
+            "paragraph"
+          ],
+          "id": "MkYjpxDrTiC78Zlg0unmLQ"
+        },
+        "media": {
+          "type": "asset",
+          "pos": 2,
+          "filetypes": [
+            "videos",
+            "images"
+          ],
+          "id": "X-nfC3lfStSQ7hx0PQMvug"
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 3,
+          "allow_target_blank": true,
+          "id": "kfx8WnxbQ12Fh_8aHLEyNw"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "project",
+      "component_group_uuid": "96cc50c9-473d-4a38-81da-d035dc154a35",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Elements"
     }
   ],
   "component_groups": [
     {
-      "name": "Block",
+      "name": "Blocks",
       "id": 552163,
       "uuid": "cdeec7ff-2980-4db4-8746-1bea35b255dc",
+      "parent_id": null,
+      "parent_uuid": null
+    },
+    {
+      "name": "Elements",
+      "id": 552601,
+      "uuid": "96cc50c9-473d-4a38-81da-d035dc154a35",
       "parent_id": null,
       "parent_uuid": null
     },

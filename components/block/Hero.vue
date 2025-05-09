@@ -53,7 +53,7 @@ const { block } = defineProps<Props>()
 
       <div>
         <NuxtImg
-          v-if="block.media?.filename && storyblokAssetType(block.media.filename)"
+          v-if="block.media?.filename && storyblokAssetType(block.media.filename) === 'image'"
           class="w-full h-full object-cover"
           :src="block.media.filename"
           provider="storyblok"

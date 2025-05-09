@@ -3,18 +3,24 @@ import { useKeenSlider } from 'keen-slider/vue.es'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import 'keen-slider/keen-slider.min.css'
 
+interface Props {
+  items?: any[]
+}
+
+const { items } = defineProps<Props>()
+
+const amount = items?.length ?? 0
 const perView = 4
-const amount = ref(0)
 const collection = ref(1)
 
 const groups = computed(() => {
-  const totalGroups = Math.ceil(amount.value / perView)
+  const totalGroups = Math.ceil(amount / perView)
 
   const payload = Array.from({ length: totalGroups }).map((_, idx) => {
     const index = idx * perView
 
     return {
-      start: index + perView > amount.value ? amount.value - perView : index,
+      start: index + perView > amount ? amount - perView : index,
       collection: idx + 1,
     }
   })
@@ -48,12 +54,13 @@ const [container, slider] = useKeenSlider({
   initial: 0,
   loop: false,
   mode: 'free-snap',
+  defaultAnimation: {
+    duration: 1000,
+    // easing: (t) => t,
+  },
   slides: {
     perView,
-    spacing: 15,
-  },
-  created(s) {
-    amount.value = s.track.details.slides.length
+    spacing: 16,
   },
   slideChanged(s) {
     const slideIndex = s.track.details.rel
@@ -91,7 +98,7 @@ const [container, slider] = useKeenSlider({
       <div class="flex items-center justify-end gap-2">
         <button
           type="button"
-          class="shrink-0 cursor-pointer size-6 opacity-30 hover:opacity-100 transition-opacity duration-200 ease-out"
+          class="shrink-0 cursor-pointer size-6 opacity-30 hover:opacity-100 focus:opacity-100 transition-opacity duration-200 ease-out"
           @click="slider.prev()"
         >
           <span class="sr-only">Go to previous item</span>
@@ -101,7 +108,7 @@ const [container, slider] = useKeenSlider({
 
         <button
           type="button"
-          class="shrink-0 cursor-pointer size-6 opacity-30 hover:opacity-100 transition-opacity duration-200 ease-out"
+          class="shrink-0 cursor-pointer size-6 opacity-30 hover:opacity-100 focus:opacity-100 transition-opacity duration-200 ease-out"
           @click="slider.next()"
         >
           <span class="sr-only">Go to next item</span>
@@ -111,17 +118,20 @@ const [container, slider] = useKeenSlider({
       </div>
     </div>
 
-    <div
+    <ul
       ref="container"
       class="keen-slider !overflow-visible"
     >
-      <div
-        v-for="i in 9"
-        :key="i"
+      <li
+        v-for="item in items"
+        :key="item"
         class="keen-slider__slide w-full aspect-[2/3] bg-secondary rounded-5"
       >
-        {{ i }}
-      </div>
-    </div>
+        <slot
+          name="item"
+          v-bind="item"
+        />
+      </li>
+    </ul>
   </div>
 </template>

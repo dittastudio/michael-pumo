@@ -143,6 +143,7 @@ export interface BlockPlayStoryblok {
 export interface BlockProjectsStoryblok {
   headline?: string;
   text?: RichtextStoryblok;
+  projects?: ProjectStoryblok[];
   background: number | string;
   component: "block_projects";
   _uid: string;
@@ -166,8 +167,19 @@ export interface PageStoryblok {
     | BlockProjectsStoryblok
     | BlockTextStoryblok
     | PageStoryblok
+    | ProjectStoryblok
   )[];
   component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface ProjectStoryblok {
+  headline?: string;
+  text?: RichtextStoryblok;
+  media?: AssetStoryblok;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  component: "project";
   _uid: string;
   [k: string]: any;
 }
