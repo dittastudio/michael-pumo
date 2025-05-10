@@ -1,5 +1,6 @@
 declare namespace App {
   export type Theme = 'light' | 'dark'
+  export type Typeface = 'saans' | 'comic-neue'
 
   type TAspectRatios =
     'auto'

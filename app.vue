@@ -6,12 +6,12 @@
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
-const selectedTheme = computed(() => `theme-${appStore.getTheme}`)
+const customisations = computed(() => `theme-${appStore.getTheme} typeface-${appStore.getTypeface}`)
 
 useHead({
   htmlAttrs: {
     lang: 'en',
-    class: selectedTheme,
+    class: customisations,
   },
 })
 

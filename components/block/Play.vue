@@ -36,11 +36,13 @@ const { block } = defineProps<Props>()
         <CardStandard
           class="w-75"
           headline="Typeface"
-          text="You are currently viewing Saans typeface. Click to toggle through a selection of alternatives."
+          :text="`You are currently viewing ${appStore.getTypeface === 'saans' ? 'Saans' : 'Comic Neue 🤣'} typeface ${appStore.getTypeface === 'saans' ? 'by Displaay Type Foundry' : 'from Google Fonts'}. Click to change your selection.`"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #top>
-            <p>I am top</p>
+            <div class="w-full">
+              <ToolTypeface text="Aa" />
+            </div>
           </template>
         </CardStandard>
 
@@ -51,7 +53,7 @@ const { block } = defineProps<Props>()
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #top>
-            <div class="w-full px-2 py-6">
+            <div class="w-full px-2 pt-6">
               <ToolPalette />
             </div>
           </template>

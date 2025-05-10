@@ -14,6 +14,10 @@
       --color-tertiary: var(--color-black);
       --color-accent: var(--color-blue);
     }
+
+    &.typeface-comic-neue {
+      --font-sans: "Comic Neue", sans-serif, system-ui;
+    }
   }
   
   body {

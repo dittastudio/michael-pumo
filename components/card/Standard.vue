@@ -17,12 +17,17 @@ const backgrounds = {
 
 <template>
   <div
-    class="flex flex-col gap-2 items-start justify-start p-6 rounded-10"
+    class="flex flex-col gap-6 items-start justify-between p-6 rounded-10"
     :class="backgrounds[background as keyof typeof backgrounds]"
   >
-    <slot name="top" />
+    <div
+      v-if="$slots.top"
+      class="w-full my-auto"
+    >
+      <slot name="top" />
+    </div>
 
-    <div class="flex flex-col gap-2 items-start justify-start">
+    <div class="flex flex-col gap-2 items-start justify-start mt-auto">
       <h3
         v-if="headline"
         class="text-24 text-tertiary"

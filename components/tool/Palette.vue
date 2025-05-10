@@ -26,12 +26,12 @@ const indexes = [
   'z-[3]',
   'z-[2]',
   'z-[1]',
-]
+] as const
 </script>
 
 <template>
   <button
-    class="w-full"
+    class="w-full overflow-hidden"
     type="button"
     @click="appStore.setTheme(appStore.getTheme === 'light' ? 'dark' : 'light')"
   >
