@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import type { BlockPlayStoryblok } from '@/types/storyblok'
+import { useAppStore } from '@/stores/app'
+
+const appStore = useAppStore()
 
 interface Props {
   block: BlockPlayStoryblok
@@ -29,8 +32,9 @@ const { block } = defineProps<Props>()
         <StoryblokText :html="block.text" />
       </div>
 
-      <div>
+      <div class="flex justify-center gap-4">
         <CardStandard
+          class="w-75"
           headline="Typeface"
           text="You are currently viewing Saans typeface. Click to toggle through a selection of alternatives."
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
@@ -38,23 +42,23 @@ const { block } = defineProps<Props>()
           <template #top>
             <p>I am top</p>
           </template>
-
-          <template #bottom>
-            <p>I am bottom</p>
-          </template>
         </CardStandard>
 
         <CardStandard
+          class="w-75"
           headline="Palette"
-          text="You are currently viewing the dark mood. Click to toggle through a selection of alternative moods."
+          :text="`You are currently viewing the ${appStore.getTheme} palette. Click to toggle through a selection of alternative palettes.`"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #top>
-            <SwitchPalette />
+            <div class="w-full px-2 py-6">
+              <ToolPalette />
+            </div>
           </template>
         </CardStandard>
 
         <CardStandard
+          class="w-75"
           headline="Vibes"
           text="You are currently viewing the dark mood. Click to toggle through a selection of alternative moods."
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"

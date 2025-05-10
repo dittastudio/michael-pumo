@@ -40,10 +40,12 @@ const { block } = defineProps<Props>()
               class="size-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-20 group-focus:opacity-20"
               :src="media.filename"
               provider="storyblok"
-              width="1000"
+              width="600"
               format="webp"
               quality="80"
               :modifiers="{ smart: true }"
+              loading="lazy"
+              :alt="media.alt || headline"
             />
 
             <div

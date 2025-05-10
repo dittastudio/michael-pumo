@@ -2,6 +2,19 @@
 // import type { SettingsStoryblok } from '@/types/storyblok'
 
 // const settings = await useStoryblokStory<SettingsStoryblok>('/settings')
+
+import { useAppStore } from '@/stores/app'
+
+const appStore = useAppStore()
+const selectedTheme = computed(() => `theme-${appStore.getTheme}`)
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+    class: selectedTheme,
+  },
+})
+
 const route = useRoute()
 
 const globalClasses = computed(() => ({

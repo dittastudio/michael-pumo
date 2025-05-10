@@ -3,6 +3,8 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: [
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/sitemap',

@@ -1,4 +1,6 @@
 declare namespace App {
+  export type Theme = 'light' | 'dark'
+
   type TAspectRatios =
     'auto'
     | '16:9'
