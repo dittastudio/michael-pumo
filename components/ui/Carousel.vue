@@ -1,13 +1,13 @@
-<script lang="ts" setup>
+<script lang="ts" generic="T" setup>
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import 'keen-slider/keen-slider.min.css'
 
-interface Props {
-  items?: any[]
+interface Props<T> {
+  items?: T[]
 }
 
-const { items } = defineProps<Props>()
+const { items } = defineProps<Props<T>>()
 
 const ready = ref(false)
 const amount = items?.length ?? 0
@@ -180,8 +180,8 @@ onMounted(() => {
       class="keen-slider !overflow-visible"
     >
       <li
-        v-for="item in items"
-        :key="item"
+        v-for="(item, index) in items"
+        :key="index"
         class="keen-slider__slide w-full aspect-[2/3] bg-secondary rounded-10"
       >
         <slot
