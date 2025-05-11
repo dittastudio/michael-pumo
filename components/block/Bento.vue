@@ -30,23 +30,37 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
       >
         <template #top>
-          <UiCarousel
-            :items="[
-              {
-                headline: 'Project 1',
-              },
-              {
-                headline: 'Project 2',
-              },
-              {
-                headline: 'Project 3',
-              },
-            ]"
-          >
-            <template #item="{ headline }">
-              <p>{{ headline }}</p>
-            </template>
-          </UiCarousel>
+          <div class="w-full px-6 pt-10 pb-6">
+            <UiCarousel
+              :per-view="1"
+              controls-position="bottom"
+              :items="[
+                {
+                  text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in future.',
+                  name: 'John Doe',
+                  subtext: 'CEO, Example Company',
+                },
+                {
+                  text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in future.',
+                  name: 'Jane Smith',
+                  subtext: 'CTO, Another Company',
+                },
+                {
+                  text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in future.',
+                  name: 'Alice Johnson',
+                  subtext: 'Project Manager, Tech Solutions',
+                },
+              ]"
+            >
+              <template #item="{ text, name, subtext }">
+                <CardQuote
+                  :text="text"
+                  :name="name"
+                  :subtext="subtext"
+                />
+              </template>
+            </UiCarousel>
+          </div>
         </template>
       </CardStandard>
 

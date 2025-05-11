@@ -35,7 +35,10 @@ const isButton = attrs.role === 'button' || attrs.tabindex === '0'
       <slot name="top" />
     </div>
 
-    <div class="flex flex-col gap-2 items-start justify-start">
+    <div
+      v-if="headline || text"
+      class="flex flex-col gap-2 items-start justify-start"
+    >
       <h3
         v-if="headline"
         class="text-24 text-tertiary"

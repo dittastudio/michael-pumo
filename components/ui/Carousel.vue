@@ -8,9 +8,10 @@ interface Props<T> {
   items?: T[]
   options?: KeenSliderOptions
   perView?: number
+  controlsPosition?: 'top' | 'bottom'
 }
 
-const { items, perView = 1 } = defineProps<Props<T>>()
+const { items, perView = 1, controlsPosition = 'top' } = defineProps<Props<T>>()
 
 const ready = ref(false)
 const amount = items?.length ?? 0
@@ -90,14 +91,17 @@ onMounted(() => {
 
 <template>
   <div
-    class="w-full transition-opacity duration-500 ease-in-out"
+    class="w-full flex flex-col gap-8 transition-opacity duration-500 ease-in-out"
     :class="{
       'opacity-0': !ready,
     }"
   >
     <div
       v-if="slider"
-      class="flex items-center justify-between mb-8"
+      class="flex items-center justify-between"
+      :class="{
+        'order-last': controlsPosition === 'bottom',
+      }"
     >
       <div class="flex items-center justify-start gap-2">
         <button
