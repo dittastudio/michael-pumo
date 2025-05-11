@@ -13,6 +13,7 @@
       --color-secondary: var(--color-grey-light);
       --color-tertiary: var(--color-black);
       --color-accent: var(--color-blue);
+      --color-complementary: var(--color-green);
     }
 
     &.typeface-comic-neue {

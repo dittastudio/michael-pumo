@@ -11,8 +11,8 @@ const appStore = useAppStore()
 
 const colours = {
   accent: 'bg-accent',
+  complementary: 'bg-complementary',
   secondary: 'bg-secondary',
-  muted: 'bg-muted',
   tertiary: 'bg-tertiary',
 } as const
 
@@ -44,7 +44,7 @@ const indexes = [
       >
         <span
           class="block w-full aspect-square rounded-full"
-          :class="['border-2', borders[border], colour]"
+          :class="['border-3', borders[border], colour]"
         />
 
         <span class="sr-only">{{ name }}</span>
