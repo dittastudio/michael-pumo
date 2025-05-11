@@ -8,10 +8,20 @@ interface Props<T> {
   items?: T[]
   options?: KeenSliderOptions
   perView?: number
+  spacing?: number
   controlsPosition?: 'top' | 'bottom'
+  classesControls?: string
+  classesSlide?: string
 }
 
-const { items, perView = 1, controlsPosition = 'top' } = defineProps<Props<T>>()
+const {
+  items,
+  perView = 1,
+  spacing = 16,
+  controlsPosition = 'top',
+  classesControls = '',
+  classesSlide = '',
+} = defineProps<Props<T>>()
 
 const ready = ref(false)
 const amount = items?.length ?? 0
@@ -65,7 +75,7 @@ const [container, slider] = useKeenSlider({
   },
   slides: {
     perView,
-    spacing: 16,
+    spacing,
   },
   slideChanged(s) {
     const slideIndex = s.track.details.rel
@@ -79,7 +89,7 @@ watch(() => perView, (newValue) => {
   slider.value?.update({
     slides: {
       perView: newValue,
-      spacing: 16,
+      spacing,
     },
   })
 })
@@ -99,9 +109,11 @@ onMounted(() => {
     <div
       v-if="slider"
       class="flex items-center justify-between"
-      :class="{
-        'order-last': controlsPosition === 'bottom',
-      }"
+      :class="[
+        classesControls,
+        {
+          'order-last': controlsPosition === 'bottom',
+        }]"
     >
       <div class="flex items-center justify-start gap-2">
         <button
@@ -152,6 +164,7 @@ onMounted(() => {
         v-for="(item, index) in items"
         :key="index"
         class="keen-slider__slide w-full"
+        :class="classesSlide"
       >
         <slot
           name="item"

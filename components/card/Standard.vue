@@ -4,10 +4,11 @@ import type { RichtextStoryblok } from '@/types/storyblok'
 interface Props {
   headline?: string
   text?: RichtextStoryblok | string
+  padded?: boolean
   background?: 'primary' | 'secondary'
 }
 
-const { headline, text, background = 'primary' } = defineProps<Props>()
+const { headline, text, padded = true, background = 'primary' } = defineProps<Props>()
 
 const backgrounds = {
   primary: 'bg-primary',
@@ -20,10 +21,11 @@ const isButton = attrs.role === 'button' || attrs.tabindex === '0'
 
 <template>
   <div
-    class="flex flex-col gap-6 items-start justify-between p-6 rounded-10"
+    class="flex flex-col gap-6 items-start justify-between rounded-10"
     :class="[
       backgrounds[background],
       {
+        'p-6': padded,
         'cursor-pointer select-none outline-1 outline-transparent hover:outline-accent focus:outline-accent transition-[outline] duration-300': isButton,
       },
     ]"

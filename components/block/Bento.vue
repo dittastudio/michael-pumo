@@ -27,40 +27,42 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
 
       <CardStandard
         class="row-span-2 overflow-x-hidden"
+        :padded="false"
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
       >
         <template #top>
-          <div class="w-full px-6 pt-10 pb-6">
-            <UiCarousel
-              :per-view="1"
-              controls-position="bottom"
-              :items="[
-                {
-                  text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in future.',
-                  name: 'John Doe',
-                  subtext: 'CEO, Example Company',
-                },
-                {
-                  text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in future.',
-                  name: 'Jane Smith',
-                  subtext: 'CTO, Another Company',
-                },
-                {
-                  text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in future.',
-                  name: 'Alice Johnson',
-                  subtext: 'Project Manager, Tech Solutions',
-                },
-              ]"
-            >
-              <template #item="{ text, name, subtext }">
-                <CardQuote
-                  :text="text"
-                  :name="name"
-                  :subtext="subtext"
-                />
-              </template>
-            </UiCarousel>
-          </div>
+          <UiCarousel
+            :per-view="1"
+            :spacing="0"
+            controls-position="bottom"
+            classes-controls="px-14 pb-14"
+            classes-slide="px-14 pt-14"
+            :items="[
+              {
+                text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in the future.',
+                name: 'Matt Bland',
+                subtext: 'Managing director at Ragged Edge',
+              },
+              {
+                text: 'Incredibly thorough and professional in bringing our new website to life. As designers, we can be quite picky about how things work but he took the challenge and developed every single aspect, beautifully.',
+                name: 'Renata Garcia',
+                subtext: 'Producer at Moth',
+              },
+              {
+                text: `Working with Michael has always been a smooth process from initial concepts to problem-solving, right through to every aspect of the development stages. He's our go-to digital partner.`,
+                name: 'Paul Fox',
+                subtext: 'Creative director at Parallel',
+              },
+            ]"
+          >
+            <template #item="{ text, name, subtext }">
+              <CardQuote
+                :text="text"
+                :name="name"
+                :subtext="subtext"
+              />
+            </template>
+          </UiCarousel>
         </template>
       </CardStandard>
 
