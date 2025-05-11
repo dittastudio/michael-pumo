@@ -2,7 +2,7 @@
 import type { MultilinkStoryblok } from '@/types/storyblok'
 
 interface Props {
-  item: MultilinkStoryblok
+  item?: MultilinkStoryblok
 }
 
 const { item } = defineProps<Props>()

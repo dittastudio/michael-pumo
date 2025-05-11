@@ -6,28 +6,17 @@ interface Props {
 }
 
 const { block } = defineProps<Props>()
+
+const background = block.background as 'bg-primary' | 'bg-secondary'
 </script>
 
 <template>
-  <div
+  <SectionStandard
     v-editable="block"
-    class="w-full"
-    :class="block.background"
+    :headline="block.headline"
+    :text="block.text"
+    :background="background"
   >
-    <div class="w-full px-gutter pt-20 pb-50">
-      <h3
-        v-if="block.headline"
-        class="text-48 mb-7 text-tertiary"
-      >
-        {{ block.headline }}
-      </h3>
-
-      <div
-        v-if="storyblokRichTextContent(block.text)"
-        class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
-      >
-        <StoryblokText :html="block.text" />
-      </div>
-    </div>
-  </div>
+    <p>Hello</p>
+  </SectionStandard>
 </template>
