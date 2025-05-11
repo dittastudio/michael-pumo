@@ -42,9 +42,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         @keydown.enter="setTypeface"
       >
         <template #top>
-          <div class="w-full">
-            <SelectedTypeface text="Aa" />
-          </div>
+          <SelectedTypeface text="Aa" />
         </template>
       </CardStandard>
 
@@ -59,9 +57,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         @keydown.enter="setTheme"
       >
         <template #top>
-          <div class="w-full px-2 pt-6">
-            <SelectedPalette />
-          </div>
+          <SelectedPalette />
         </template>
       </CardStandard>
 
@@ -76,9 +72,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         @keydown.enter="play = !play"
       >
         <template #top>
-          <div class="w-full px-2 pt-6">
-            <SelectedAudio :play="play" />
-          </div>
+          <SelectedAudio :play="play" />
         </template>
       </CardStandard>
     </div>
