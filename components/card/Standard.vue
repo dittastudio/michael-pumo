@@ -13,12 +13,20 @@ const backgrounds = {
   primary: 'bg-primary',
   secondary: 'bg-secondary',
 } as const
+
+const attrs = useAttrs()
+const isButton = attrs.role === 'button' || attrs.tabindex === '0'
 </script>
 
 <template>
   <div
     class="flex flex-col gap-6 items-start justify-between p-6 rounded-10"
-    :class="backgrounds[background as keyof typeof backgrounds]"
+    :class="[
+      backgrounds[background],
+      {
+        'cursor-pointer select-none outline-1 outline-transparent hover:outline-accent focus:outline-accent transition-[outline] duration-300': isButton,
+      },
+    ]"
   >
     <div
       v-if="$slots.top"
@@ -37,7 +45,7 @@ const backgrounds = {
 
       <p
         v-if="text && typeof text === 'string'"
-        class="text-14"
+        class="text-14 text-pretty"
       >
         {{ text }}
       </p>
@@ -50,6 +58,11 @@ const backgrounds = {
       </div>
     </div>
 
-    <slot name="bottom" />
+    <div
+      v-if="$slots.bottom"
+      class="w-full my-auto"
+    >
+      <slot name="bottom" />
+    </div>
   </div>
 </template>

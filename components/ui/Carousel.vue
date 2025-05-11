@@ -75,7 +75,7 @@ const [container, slider] = useKeenSlider({
   loop: false,
   mode: 'free-snap',
   dragSpeed: 0.5,
-  rubberband: false,
+  rubberband: true,
   defaultAnimation: {
     duration: 1000,
     // easing: (t) => t,
