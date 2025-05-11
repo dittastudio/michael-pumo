@@ -1,47 +1,29 @@
 <script lang="ts" generic="T" setup>
+import type { KeenSliderOptions } from 'keen-slider'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import 'keen-slider/keen-slider.min.css'
 
 interface Props<T> {
   items?: T[]
+  options?: KeenSliderOptions
+  perView?: number
 }
 
-const { items } = defineProps<Props<T>>()
+const { items, perView = 1 } = defineProps<Props<T>>()
 
 const ready = ref(false)
 const amount = items?.length ?? 0
-const perView = ref(4)
 const collection = ref(1)
 
-const isXs = useAtMedia('(max-width: 479px)')
-const isSm = useAtMedia('(min-width: 480px) and (max-width: 799px)')
-const isMd = useAtMedia('(min-width: 800px) and (max-width: 1199px)')
-const isLg = useAtMedia('(min-width: 1200px)')
-
-const setPerView = () => {
-  if (isXs.value) {
-    perView.value = 1
-  }
-  else if (isSm.value) {
-    perView.value = 2
-  }
-  else if (isMd.value) {
-    perView.value = 3
-  }
-  else if (isLg.value) {
-    perView.value = 4
-  }
-}
-
 const groups = computed(() => {
-  const totalGroups = Math.ceil(amount / perView.value)
+  const totalGroups = Math.ceil(amount / perView)
 
   const payload = Array.from({ length: totalGroups }).map((_, idx) => {
-    const index = idx * perView.value
+    const index = idx * perView
 
     return {
-      start: index + perView.value > amount ? amount - perView.value : index,
+      start: index + perView > amount ? amount - perView : index,
       collection: idx + 1,
     }
   })
@@ -81,34 +63,8 @@ const [container, slider] = useKeenSlider({
     // easing: (t) => t,
   },
   slides: {
-    perView: 1,
+    perView,
     spacing: 16,
-  },
-  breakpoints: {
-    '(min-width: 480px)': {
-      slides: {
-        perView: 2,
-        spacing: 16,
-      },
-    },
-    '(min-width: 800px)': {
-      slides: {
-        perView: 3,
-        spacing: 16,
-      },
-    },
-    '(min-width: 1200px)': {
-      slides: {
-        perView: 4,
-        spacing: 16,
-      },
-    },
-  },
-  created() {
-    setPerView()
-  },
-  optionsChanged() {
-    setPerView()
   },
   slideChanged(s) {
     const slideIndex = s.track.details.rel
@@ -116,6 +72,15 @@ const [container, slider] = useKeenSlider({
 
     collection.value = group.collection
   },
+})
+
+watch(() => perView, (newValue) => {
+  slider.value?.update({
+    slides: {
+      perView: newValue,
+      spacing: 16,
+    },
+  })
 })
 
 onMounted(() => {
@@ -182,7 +147,7 @@ onMounted(() => {
       <li
         v-for="(item, index) in items"
         :key="index"
-        class="keen-slider__slide w-full aspect-[2/3] bg-secondary rounded-10"
+        class="keen-slider__slide w-full"
       >
         <slot
           name="item"

@@ -13,7 +13,7 @@ const { headline, link, media } = defineProps<Props>()
 <template>
   <StoryblokLink
     :item="link"
-    class="group block relative size-full"
+    class="group block relative size-full rounded-10 overflow-hidden"
   >
     <NuxtImg
       v-if="media?.filename && storyblokAssetType(media.filename) === 'image'"
