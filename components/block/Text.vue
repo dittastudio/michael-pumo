@@ -11,7 +11,7 @@ const { block } = defineProps<Props>()
 <template>
   <div
     v-editable="block"
-    class="w-full px-gutter py-gutter-lg"
+    class="w-full px-gutter py-gutter-xl"
     :class="block.background"
   >
     <div class="w-full mx-auto md:max-w-[615px]">

@@ -12,27 +12,25 @@ const { headline, text, background = 'bg-primary' } = defineProps<Props>()
 
 <template>
   <div
-    class="w-full"
+    class="w-full px-gutter pt-20 pb-50 flex flex-col gap-gutter"
     :class="background"
   >
-    <div class="w-full px-gutter pt-20 pb-50 flex flex-col gap-gutter">
-      <div>
-        <h3
-          v-if="headline"
-          class="text-48 mb-7 text-tertiary"
-        >
-          {{ headline }}
-        </h3>
+    <div class="w-full flex flex-col gap-7">
+      <h3
+        v-if="headline"
+        class="text-48 text-tertiary"
+      >
+        {{ headline }}
+      </h3>
 
-        <div
-          v-if="storyblokRichTextContent(text)"
-          class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
-        >
-          <StoryblokText :html="text" />
-        </div>
+      <div
+        v-if="storyblokRichTextContent(text)"
+        class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
+      >
+        <StoryblokText :html="text" />
       </div>
-
-      <slot />
     </div>
+
+    <slot />
   </div>
 </template>

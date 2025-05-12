@@ -2,6 +2,7 @@
 @import "./page.css";
 @import "./fonts.css";
 @import "./transitions.css";
+@import "./utils.css";
 @import "tailwindcss";
 
 @theme {
@@ -49,6 +50,7 @@
   --spacing-gutter: var(--app-gutter);
   --spacing-gutter-md: var(--app-gutter-md);
   --spacing-gutter-lg: var(--app-gutter-lg);
+  --spacing-gutter-xl: var(--app-gutter-xl);
 
   --font-\*: initial;
   --font-sans: "Saans", sans-serif, system-ui;
@@ -103,7 +105,8 @@
     --app-outer-gutter: clamp(24px, -11.897px + 8.974vw, 80px);
 
     --app-gutter: clamp(24px, -11.897px + 8.974vw, 80px);
-    --app-gutter-md: clamp(80px, 3.077px + 19.231vw, 200px);
-    --app-gutter-lg: clamp(80px, -35.385px + 28.846vw, 260px);
+    --app-gutter-md: clamp(80px, 54.359px + 6.41vw, 120px);
+    --app-gutter-lg: clamp(80px, 3.077px + 19.231vw, 200px);
+    --app-gutter-xl: clamp(80px, -35.385px + 28.846vw, 260px);
   }
 }

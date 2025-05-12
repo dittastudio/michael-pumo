@@ -2,94 +2,57 @@
 interface Props {
   items?: T[]
   speed?: number
-  pauseOnHover?: boolean
+  classesList?: string
 }
 
-const { items = [], speed = 30, pauseOnHover = true } = defineProps<Props>()
+const { items = [], speed = 24 } = defineProps<Props>()
 
-const duplicatedItems = computed(() => [...items, ...items])
-
-const isPaused = ref(false)
-const marqueeRef = ref<HTMLElement | null>(null)
-
-function handleMouseEnter() {
-  if (pauseOnHover) {
-    isPaused.value = true
-  }
-}
-
-function handleMouseLeave() {
-  if (pauseOnHover) {
-    isPaused.value = false
-  }
-}
-
-// Calculate animation duration based on speed
-const animationDuration = computed(() => (!items?.length) ? '0s' : `${items.length * (100 / speed)}s`)
-
-const animationClasses = computed(() => ({
-  'marquee-paused': isPaused.value,
-}))
-
-// Set up animation properties
-onMounted(() => {
-  if (marqueeRef.value) {
-    marqueeRef.value.style.setProperty('--animation-duration', animationDuration.value)
-  }
-})
+const duration = computed(() => (!items?.length) ? '0s' : `${speed}s`)
 </script>
 
 <template>
-  <div
-    ref="marqueeRef"
-    class="w-full overflow-hidden relative"
-    @mouseenter="handleMouseEnter"
-    @mouseleave="handleMouseLeave"
-  >
-    <div class="w-full">
-      <ul
-        class="marquee-content"
-        :class="animationClasses"
+  <div class="marquee w-full flex overflow-hidden">
+    <ul
+      v-for="list in 2"
+      :key="list"
+      class="marquee__list flex shrink-0"
+      :class="classesList"
+    >
+      <li
+        v-for="(item, index) in items"
+        :key="index"
+        class="shrink-0"
       >
-        <li
-          v-for="(item, index) in duplicatedItems"
-          :key="index"
-          class="marquee-item"
-        >
-          <slot
-            name="item"
-            v-bind="item"
-          />
-        </li>
-      </ul>
-    </div>
+        <slot
+          name="item"
+          v-bind="item"
+        />
+      </li>
+    </ul>
   </div>
 </template>
 
-<style scoped>
-.marquee-content {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  animation: scrolling var(--animation-duration) linear infinite;
-}
-
-.marquee-item {
-  flex: 0 0 20%; /* Each item takes exactly 20% width */
-  min-width: 20%; /* Ensure minimum width is maintained */
-}
-
-.marquee-paused {
-  animation-play-state: paused;
-}
-
+<style lang="postcss" scoped>
 @keyframes scrolling {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  --animation-duration: v-bind(duration);
+
+  &:hover {
+    .marquee__list {
+      animation-play-state: paused;
+    }
+  }
+
+  &__list {
+    animation: scrolling var(--animation-duration) linear infinite;
   }
 }
 </style>

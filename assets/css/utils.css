@@ -1,0 +1,3 @@
+@utility mask-sides {
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+}
