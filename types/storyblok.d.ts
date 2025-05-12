@@ -13,6 +13,7 @@ export interface RichtextStoryblok {
 export interface BlockBentoStoryblok {
   headline?: string;
   text?: RichtextStoryblok;
+  testimonials?: TestimonialStoryblok[];
   background: number | string;
   component: "block_bento";
   _uid: string;
@@ -169,6 +170,7 @@ export interface PageStoryblok {
     | BlockTextStoryblok
     | PageStoryblok
     | ProjectStoryblok
+    | TestimonialStoryblok
   )[];
   component: "page";
   _uid: string;
@@ -181,6 +183,15 @@ export interface ProjectStoryblok {
   media?: AssetStoryblok;
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   component: "project";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface TestimonialStoryblok {
+  quote: RichtextStoryblok;
+  name?: string;
+  subtext?: string;
+  component: "testimonial";
   _uid: string;
   [k: string]: any;
 }

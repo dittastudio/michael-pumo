@@ -1,5 +1,19 @@
 <script lang="ts" setup>
 import type { BlockBentoStoryblok } from '@/types/storyblok'
+import Astro from '@/assets/icons/astro.svg'
+import Css from '@/assets/icons/css.svg'
+import Figma from '@/assets/icons/figma.svg'
+import Git from '@/assets/icons/git.svg'
+import Gsap from '@/assets/icons/gsap.svg'
+import Netlify from '@/assets/icons/netlify.svg'
+import Next from '@/assets/icons/next.svg'
+import Nuxt from '@/assets/icons/nuxt.svg'
+import React from '@/assets/icons/react.svg'
+import Supabase from '@/assets/icons/supabase.svg'
+import Tailwind from '@/assets/icons/tailwind.svg'
+import Ts from '@/assets/icons/ts.svg'
+import Vite from '@/assets/icons/vite.svg'
+import Vue from '@/assets/icons/vue.svg'
 
 interface Props {
   block: BlockBentoStoryblok
@@ -8,6 +22,22 @@ interface Props {
 const { block } = defineProps<Props>()
 
 const background = block.background as 'bg-primary' | 'bg-secondary'
+const technologies = [
+  Astro,
+  Css,
+  Figma,
+  Git,
+  Gsap,
+  Netlify,
+  Next,
+  Nuxt,
+  React,
+  Supabase,
+  Tailwind,
+  Ts,
+  Vite,
+  Vue,
+]
 </script>
 
 <template>
@@ -37,27 +67,11 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
             controls-position="bottom"
             classes-controls="px-14 pb-14"
             classes-slide="px-14 pt-14"
-            :items="[
-              {
-                text: 'Michael’s work is of consistently high quality. He continues to be one of our most valued digital resources and we look forward to working together more in the future.',
-                name: 'Matt Bland',
-                subtext: 'Managing director at Ragged Edge',
-              },
-              {
-                text: 'Incredibly thorough and professional in bringing our new website to life. As designers, we can be quite picky about how things work but he took the challenge and developed every single aspect, beautifully.',
-                name: 'Renata Garcia',
-                subtext: 'Producer at Moth',
-              },
-              {
-                text: `Working with Michael has always been a smooth process from initial concepts to problem-solving, right through to every aspect of the development stages. He's our go-to digital partner.`,
-                name: 'Paul Fox',
-                subtext: 'Creative director at Parallel',
-              },
-            ]"
+            :items="block.testimonials"
           >
-            <template #item="{ text, name, subtext }">
-              <CardQuote
-                :text="text"
+            <template #item="{ quote, name, subtext }">
+              <CardTestimonial
+                :quote="quote"
                 :name="name"
                 :subtext="subtext"
               />
@@ -70,7 +84,22 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         headline="Technology"
         text="I’m a freelance digital web designer and frontend developer focusing on modern web technologies."
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
-      />
+      >
+        <template #bottom>
+          <!-- <UiTechTicker /> -->
+
+          <UiMarquee :items="technologies">
+            <template #item="item">
+              <div class="shrink-0 size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out">
+                <Component
+                  :is="item"
+                  class="size-full text-tertiary"
+                />
+              </div>
+            </template>
+          </UiMarquee>
+        </template>
+      </CardStandard>
 
       <CardStandard
         headline="Web design"

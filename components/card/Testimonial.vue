@@ -2,12 +2,12 @@
 import type { RichtextStoryblok } from '@/types/storyblok'
 
 interface Props {
-  text?: RichtextStoryblok | string
+  quote?: RichtextStoryblok | string
   name?: string
   subtext?: string
 }
 
-const { text, name, subtext } = defineProps<Props>()
+const { quote, name, subtext } = defineProps<Props>()
 </script>
 
 <template>
@@ -17,17 +17,17 @@ const { text, name, subtext } = defineProps<Props>()
       class="text-tertiary"
     >
       <p
-        v-if="text && typeof text === 'string'"
+        v-if="quote && typeof quote === 'string'"
         class="text-30 text-pretty"
       >
-        {{ text }}
+        {{ quote }}
       </p>
 
       <div
-        v-else-if="typeof text !== 'string' && storyblokRichTextContent(text)"
+        v-else-if="typeof quote !== 'string' && storyblokRichTextContent(quote)"
         class="[&_:is(p):not(:last-child)]:mb-4 [&]:text-30"
       >
-        <StoryblokText :html="text" />
+        <StoryblokText :html="quote" />
       </div>
     </blockquote>
 
