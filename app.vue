@@ -39,6 +39,8 @@ useMenu(false)
   <div>
     <NuxtPage />
 
+    <AppFooter />
+
     <DevGuide />
   </div>
 </template>
