@@ -13,6 +13,7 @@ export interface RichtextStoryblok {
 export interface BlockBentoStoryblok {
   headline?: string;
   text?: RichtextStoryblok;
+  about?: RichtextStoryblok;
   testimonials?: TestimonialStoryblok[];
   background: number | string;
   component: "block_bento";

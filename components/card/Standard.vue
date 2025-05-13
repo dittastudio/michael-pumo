@@ -32,7 +32,7 @@ const isButton = attrs.role === 'button' || attrs.tabindex === '0'
   >
     <div
       v-if="$slots.top"
-      class="w-full my-auto"
+      class="size-full"
     >
       <slot name="top" />
     </div>
@@ -57,7 +57,7 @@ const isButton = attrs.role === 'button' || attrs.tabindex === '0'
 
       <div
         v-else-if="typeof text !== 'string' && storyblokRichTextContent(text)"
-        class="[&_:is(p):not(:last-child)]:mb-4 [&]:text-pretty [&]:text-14 max-w-[40ch]"
+        class="[&_:is(p):not(:last-child)]:mb-4 text-pretty text-14 max-w-[40ch]"
       >
         <StoryblokText :html="text" />
       </div>
@@ -65,7 +65,7 @@ const isButton = attrs.role === 'button' || attrs.tabindex === '0'
 
     <div
       v-if="$slots.bottom"
-      class="w-full my-auto"
+      class="size-full"
     >
       <slot name="bottom" />
     </div>

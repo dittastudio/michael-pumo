@@ -8,6 +8,7 @@ import Gsap from '@/assets/icons/gsap.svg'
 import Netlify from '@/assets/icons/netlify.svg'
 import Next from '@/assets/icons/next.svg'
 import Nuxt from '@/assets/icons/nuxt.svg'
+import Openai from '@/assets/icons/openai.svg'
 import React from '@/assets/icons/react.svg'
 import Supabase from '@/assets/icons/supabase.svg'
 import Tailwind from '@/assets/icons/tailwind.svg'
@@ -45,6 +46,7 @@ const technologies = [
   Netlify,
   Next,
   Nuxt,
+  Openai,
   React,
   Supabase,
   Tailwind,
@@ -130,13 +132,44 @@ const clients = [
     :background="background"
   >
     <div class="w-full flex flex-col gap-gutter-md">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[300px_auto_300px] gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[clamp(250px,24%,300px)_auto_clamp(250px,24%,300px)] gap-4">
         <CardStandard
-          class="col-span-2 md:col-span-1 md:order-1 lg:order-0 lg:col-span-1 lg:row-span-2"
-          headline="London-based"
-          text="I’m based in London and primarily work remotely, though I’m available to attend your London office upon request."
+          class="col-span-2 md:col-span-1 order-1 lg:order-0 lg:col-span-1 lg:row-span-2"
+          headline="About"
+          :text="block.about"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
-        />
+        >
+          <template #bottom>
+            <StoryblokLink
+              class="mt-3"
+            >
+              <ButtonAppearance
+                text="Say hello"
+                size="small"
+              />
+            </StoryblokLink>
+
+            <div class="flex flex-col h-full place-content-end">
+              <UiDate>
+                <template #date="{ weekday, day, month }">
+                  <span class="text-18">
+                    {{ weekday }}
+                    {{ day }}
+                    {{ month }}
+                  </span>
+                </template>
+              </UiDate>
+
+              <UiClock>
+                <template #clock="{ time }">
+                  <span class="flex flex-col">
+                    <span class="text-30 text-tertiary">{{ time }}</span>
+                  </span>
+                </template>
+              </UiClock>
+            </div>
+          </template>
+        </CardStandard>
 
         <CardStandard
           class="col-span-2 md:col-span-3 lg:col-span-1 lg:row-span-2 overflow-x-hidden"
@@ -170,20 +203,22 @@ const clients = [
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #bottom>
-            <div class="-mx-6 mask-sides">
-              <UiMarquee
-                :items="technologies"
-                classes-list="gap-2.5 pr-2.5"
-              >
-                <template #item="item">
-                  <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out">
-                    <Component
-                      :is="item"
-                      class="size-full text-tertiary"
-                    />
-                  </div>
-                </template>
-              </UiMarquee>
+            <div class="flex flex-col h-full place-content-center">
+              <div class="-mx-6 mask-sides">
+                <UiMarquee
+                  :items="technologies"
+                  classes-list="gap-2.5 pr-2.5"
+                >
+                  <template #item="item">
+                    <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out">
+                      <Component
+                        :is="item"
+                        class="size-full text-tertiary"
+                      />
+                    </div>
+                  </template>
+                </UiMarquee>
+              </div>
             </div>
           </template>
         </CardStandard>
@@ -195,8 +230,8 @@ const clients = [
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #bottom>
-            <div class="flex flex-col gap-gutter">
-              <div class="w-full aspect-[5/2] bg-tertiary/20" />
+            <div class="flex flex-col h-full place-content-end bg-[red]">
+              <div class="w-full aspect-[5/2] bg-[blue]" />
             </div>
           </template>
         </CardStandard>

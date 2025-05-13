@@ -5,6 +5,8 @@
 @import "./utils.css";
 @import "tailwindcss";
 
+@source inline('text-accent');
+
 @theme {
   --color-\*: initial;
   --color-transparent: transparent;
@@ -71,6 +73,10 @@
   --text-18: 1.125rem;
   --text-18--line-height: 1.4;
   --text-18--letter-spacing: -0.005em;
+
+  --text-20: 1.25rem;
+  --text-20--line-height: 1.4;
+  --text-20--letter-spacing: -0.005em;
 
   --text-26: 1.625rem;
   --text-26--line-height: 1.3;

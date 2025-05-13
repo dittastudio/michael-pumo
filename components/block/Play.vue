@@ -30,7 +30,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
     :text="block.text"
     :background="background"
   >
-    <div class="flex justify-center gap-4">
+    <div class="flex flex-wrap justify-center gap-4">
       <CardStandard
         class="w-75"
         headline="Typeface"
@@ -42,7 +42,9 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         @keydown.enter="setTypeface"
       >
         <template #top>
-          <SelectedTypeface text="Aa" />
+          <div class="flex flex-col h-full place-content-center">
+            <SelectedTypeface text="Aa" />
+          </div>
         </template>
       </CardStandard>
 
@@ -57,7 +59,9 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         @keydown.enter="setTheme"
       >
         <template #top>
-          <SelectedPalette />
+          <div class="flex flex-col h-full place-content-center">
+            <SelectedPalette />
+          </div>
         </template>
       </CardStandard>
 
@@ -72,7 +76,9 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         @keydown.enter="play = !play"
       >
         <template #top>
-          <SelectedAudio :play="play" />
+          <div class="flex flex-col h-full place-content-center">
+            <SelectedAudio :play="play" />
+          </div>
         </template>
       </CardStandard>
     </div>

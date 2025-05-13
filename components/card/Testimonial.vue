@@ -11,21 +11,21 @@ const { quote, name, subtext } = defineProps<Props>()
 </script>
 
 <template>
-  <figure class="flex flex-col gap-10 items-start justify-start">
+  <figure class="h-full flex flex-col items-start justify-between gap-10">
     <blockquote
       cite="#"
       class="text-tertiary"
     >
       <p
         v-if="quote && typeof quote === 'string'"
-        class="text-30 text-pretty"
+        class="text-30 max-w-[40ch] text-pretty"
       >
         {{ quote }}
       </p>
 
       <div
         v-else-if="typeof quote !== 'string' && storyblokRichTextContent(quote)"
-        class="[&_:is(p):not(:last-child)]:mb-4 [&]:text-30"
+        class="[&_:is(p):not(:last-child)]:mb-4 text-30 max-w-[40ch] text-pretty"
       >
         <StoryblokText :html="quote" />
       </div>
