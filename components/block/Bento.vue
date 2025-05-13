@@ -57,66 +57,79 @@ const technologies = [
 
 const clients = [
   {
+    name: 'Studio 206',
     logo: Studio206,
     url: 'https://studio206.dev',
     classes: 'h-6',
   },
   {
+    name: 'Ditta',
     logo: Ditta,
     url: 'https://ditta.studio',
     classes: 'h-6',
   },
   {
+    name: 'Foolproof',
     logo: Foolproof,
     url: 'https://foolproof.co.uk',
     classes: 'h-8',
   },
   {
+    name: 'Greggs',
     logo: Greggs,
     url: 'https://greggs.com',
     classes: 'h-6',
   },
   {
+    name: 'Hex Digital',
     logo: Hex,
     url: 'https://www.hexdigital.com',
     classes: 'h-6',
   },
   {
+    name: 'Hoxton',
     logo: Hoxton,
     url: 'https://thehoxton.com',
     classes: 'h-6',
   },
   {
+    name: 'Limesharp',
     logo: Limesharp,
     url: 'https://limesharp.net',
     classes: 'h-8',
   },
   {
+    name: 'Matter of Form',
     logo: Mof,
     url: 'https://www.matterofform.com',
     classes: 'h-6',
   },
   {
+    name: 'Parallel',
     logo: Parallel,
     url: 'https://studioparallel.co.uk',
     classes: 'h-7.5',
   },
   {
+    name: 'Ragged Edge',
     logo: RaggedEdge,
     url: 'https://raggededge.com',
     classes: 'h-5.5',
   },
   {
+    name: 'Rotate',
     logo: Rotate,
     url: 'https://studiorotate.com',
     classes: 'h-6',
   },
   {
+    name: 'Someone',
     logo: Someone,
     url: 'https://someoneinlondon.com',
     classes: 'h-6',
   },
   {
+    name: 'Structure',
     logo: Structure,
     url: 'https://www.designbystructure.com',
     classes: 'h-6',
@@ -255,6 +268,10 @@ const clients = [
                 :is="item.logo"
                 class="size-full text-tertiary"
               />
+
+              <span class="sr-only">
+                {{ item.name }}
+              </span>
             </NuxtLink>
           </template>
         </UiMarquee>
