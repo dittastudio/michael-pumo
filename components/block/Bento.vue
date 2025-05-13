@@ -130,12 +130,12 @@ const clients = [
     :headline="block.headline"
     :text="block.text"
     :background="background"
+    class="overflow-x-hidden"
   >
     <div class="w-full flex flex-col gap-gutter-md">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[clamp(250px,24%,300px)_auto_clamp(250px,24%,300px)] gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-rows-2 lg:grid-cols-[clamp(250px,24%,300px)_auto_clamp(250px,24%,300px)] gap-4">
         <CardStandard
-          class="col-span-2 md:col-span-1 order-1 lg:order-0 lg:col-span-1 lg:row-span-2"
-          headline="About"
+          class="col-span-2 md:col-span-1 md:order-1 lg:order-0 lg:col-span-1 lg:row-span-2"
           :text="block.about"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
@@ -232,8 +232,8 @@ const clients = [
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #bottom>
-            <div class="flex flex-col h-full place-content-end bg-[red]">
-              <div class="w-full aspect-[5/2] bg-[blue]" />
+            <div class="flex flex-col -mx-6 min-h-20 h-full place-content-end">
+              <UiCanvas />
             </div>
           </template>
         </CardStandard>

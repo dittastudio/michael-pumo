@@ -9,7 +9,7 @@ const { text = '', size = 'medium' } = defineProps<Props>()
 const sizes = {
   small: 'px-8 py-3 text-14',
   medium: 'px-12 py-4 text-16',
-  large: 'px-12 py-4 text-16',
+  large: 'px-12 py-6 text-18',
 } as const
 </script>
 
