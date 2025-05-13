@@ -12,7 +12,7 @@ const { headline, text, background = 'bg-primary' } = defineProps<Props>()
 
 <template>
   <div
-    class="w-full px-gutter pt-20 pb-50 flex flex-col gap-gutter"
+    class="w-full px-gutter pt-20 pb-50 flex flex-col gap-20"
     :class="background"
   >
     <div
