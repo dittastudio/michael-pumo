@@ -1,15 +1,21 @@
 <script lang="ts" setup>
 import type { BlockHeroStoryblok } from '@/types/storyblok'
 
+import { useLenis } from 'lenis/vue'
+
 interface Props {
   block: BlockHeroStoryblok
 }
 
 const { block } = defineProps<Props>()
+
+const container = useTemplateRef<HTMLElement | null>('container')
+const lenis = useLenis()
 </script>
 
 <template>
   <div
+    ref="container"
     v-editable="block"
   >
     <div

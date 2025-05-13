@@ -4,7 +4,8 @@ interface Props {
 }
 
 const { timeZone = 'Europe/London' } = defineProps<Props>()
-const clock = ref<HTMLDivElement | null>(null)
+
+const clock = useTemplateRef<HTMLDivElement | null>('clock')
 const time = ref('')
 const zone = ref('')
 const raf = ref<number | undefined>(undefined)

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import { useAppStore } from '@/stores/app'
+import { VueLenis } from 'lenis/vue'
+
 // import type { SettingsStoryblok } from '@/types/storyblok'
 
 // const settings = await useStoryblokStory<SettingsStoryblok>('/settings')
-
-import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
 const customisations = computed(() => `theme-${appStore.getTheme} typeface-${appStore.getTypeface}`)
@@ -31,16 +32,14 @@ useSeoMeta({
   titleTemplate: title => (title ? `${title} - Michael Pumo` : 'Michael Pumo'),
   robots: 'index, follow',
 })
-
-useMenu(false)
 </script>
 
 <template>
-  <div>
+  <VueLenis root>
     <NuxtPage />
 
     <AppFooter />
 
     <DevGuide />
-  </div>
+  </VueLenis>
 </template>

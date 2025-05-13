@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/sitemap',
+    'lenis/nuxt',
     [
       '@storyblok/nuxt',
       {
