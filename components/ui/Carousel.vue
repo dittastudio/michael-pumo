@@ -101,7 +101,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="w-full flex flex-col gap-8 transition-opacity duration-500 ease-in-out"
+    class="size-full flex flex-col justify-between gap-8 transition-opacity duration-500 ease-in-out"
     :class="{
       'opacity-0': !ready,
     }"

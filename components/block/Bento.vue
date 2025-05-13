@@ -140,33 +140,35 @@ const clients = [
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #bottom>
-            <StoryblokLink
-              class="mt-3"
-            >
-              <ButtonAppearance
-                text="Say hello"
-                size="small"
-              />
-            </StoryblokLink>
+            <div class="flex flex-col gap-6 h-full place-content-between">
+              <StoryblokLink
+                class="mt-3"
+              >
+                <ButtonAppearance
+                  text="Say hello"
+                  size="small"
+                />
+              </StoryblokLink>
 
-            <div class="flex flex-col h-full place-content-end">
-              <UiDate>
-                <template #date="{ weekday, day, month }">
-                  <span class="text-18">
-                    {{ weekday }}
-                    {{ day }}
-                    {{ month }}
-                  </span>
-                </template>
-              </UiDate>
+              <div>
+                <UiDate>
+                  <template #date="{ weekday, day, month }">
+                    <span class="text-18">
+                      {{ weekday }}
+                      {{ day }}
+                      {{ month }}
+                    </span>
+                  </template>
+                </UiDate>
 
-              <UiClock>
-                <template #clock="{ time }">
-                  <span class="flex flex-col">
-                    <span class="text-30 text-tertiary">{{ time }}</span>
-                  </span>
-                </template>
-              </UiClock>
+                <UiClock>
+                  <template #clock="{ time }">
+                    <span class="flex flex-col">
+                      <span class="text-30 text-tertiary">{{ time }}</span>
+                    </span>
+                  </template>
+                </UiClock>
+              </div>
             </div>
           </template>
         </CardStandard>
