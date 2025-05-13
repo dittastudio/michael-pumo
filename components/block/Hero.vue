@@ -32,7 +32,7 @@ const { block } = defineProps<Props>()
 
           <div
             v-if="storyblokRichTextContent(block.text)"
-            class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-18 max-w-[40ch]"
+            class="[&_:is(p):not(:last-child)]:mb-7 text-18 max-w-[40ch]"
           >
             <StoryblokText :html="block.text" />
           </div>

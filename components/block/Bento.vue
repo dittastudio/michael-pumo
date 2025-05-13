@@ -133,9 +133,9 @@ const clients = [
     class="overflow-x-hidden"
   >
     <div class="w-full flex flex-col gap-gutter-md">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-rows-2 lg:grid-cols-[clamp(250px,24%,300px)_auto_clamp(250px,24%,300px)] gap-4">
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[clamp(250px,24%,300px)_auto_clamp(250px,24%,300px)] lg:grid-rows-2">
         <CardStandard
-          class="col-span-2 md:col-span-1 md:order-1 lg:order-0 lg:col-span-1 lg:row-span-2"
+          class="sm:col-span-2 md:col-span-1 md:row-span-2"
           :text="block.about"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
@@ -174,7 +174,7 @@ const clients = [
         </CardStandard>
 
         <CardStandard
-          class="col-span-2 md:col-span-3 lg:col-span-1 lg:row-span-2 overflow-x-hidden"
+          class="overflow-x-hidden sm:col-span-2 md:order-1 lg:order-none lg:col-span-1 lg:col-start-2 lg:row-span-2"
           :padded="false"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
@@ -183,8 +183,8 @@ const clients = [
               :per-view="1"
               :spacing="0"
               controls-position="bottom"
-              classes-controls="px-14 pb-14"
-              classes-slide="px-14 pt-14"
+              classes-controls="px-6 pb-6 @md/carousel:px-10 @md/carousel:pb-10 @xl/carousel:px-14 @xl/carousel:pb-14"
+              classes-slide="px-6 pt-6 @md/carousel:px-10 @md/carousel:pt-10 @xl/carousel:px-14 @xl/carousel:pt-14"
               :items="block.testimonials"
             >
               <template #item="{ quote, name, subtext }">
@@ -199,34 +199,32 @@ const clients = [
         </CardStandard>
 
         <CardStandard
-          class="col-span-2 sm:col-span-1"
+          class="md:col-start-2 lg:col-start-3"
           headline="Technology"
           text="I’m a freelance digital web designer and frontend developer focusing on modern web technologies."
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
           <template #bottom>
-            <div class="flex flex-col h-full place-content-center">
-              <div class="-mx-6 mask-sides">
-                <UiMarquee
-                  :items="technologies"
-                  classes-list="gap-2.5 pr-2.5"
-                >
-                  <template #item="item">
-                    <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out">
-                      <Component
-                        :is="item"
-                        class="size-full text-tertiary"
-                      />
-                    </div>
-                  </template>
-                </UiMarquee>
-              </div>
+            <div class="flex flex-col h-full place-content-center -mx-6 mask-sides">
+              <UiMarquee
+                :items="technologies"
+                classes-list="gap-2.5 pr-2.5"
+              >
+                <template #item="item">
+                  <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out">
+                    <Component
+                      :is="item"
+                      class="size-full text-tertiary"
+                    />
+                  </div>
+                </template>
+              </UiMarquee>
             </div>
           </template>
         </CardStandard>
 
         <CardStandard
-          class="col-span-2 sm:col-span-1"
+          class="md:col-start-2 lg:col-start-3"
           headline="Web design"
           text="Using tools such as Figma I can create bespoke pixel-perfect web design."
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"

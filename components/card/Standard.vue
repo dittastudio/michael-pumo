@@ -43,7 +43,7 @@ const isButton = attrs.role === 'button' || attrs.tabindex === '0'
     >
       <h3
         v-if="headline"
-        class="text-24 text-tertiary"
+        class="text-18 text-tertiary"
       >
         {{ headline }}
       </h3>
