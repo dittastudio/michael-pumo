@@ -15,7 +15,10 @@ const { headline, text, background = 'bg-primary' } = defineProps<Props>()
     class="w-full px-gutter pt-20 pb-50 flex flex-col gap-gutter"
     :class="background"
   >
-    <div class="w-full flex flex-col gap-7">
+    <div
+      v-if="headline || storyblokRichTextContent(text)"
+      class="w-full flex flex-col gap-7"
+    >
       <h2
         v-if="headline"
         class="text-48 text-tertiary"
