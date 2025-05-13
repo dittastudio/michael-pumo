@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { BlockHeroStoryblok } from '@/types/storyblok'
-
 import { useLenis } from 'lenis/vue'
 
 interface Props {
@@ -11,6 +10,21 @@ const { block } = defineProps<Props>()
 
 const container = useTemplateRef<HTMLElement | null>('container')
 const lenis = useLenis()
+
+const scrollDown = () => {
+  if (!container.value || !lenis.value) {
+    return
+  }
+
+  const { bottom } = container.value.getBoundingClientRect()
+
+  lenis.value.scrollTo(
+    bottom + window.scrollY,
+    {
+      duration: 1,
+    },
+  )
+}
 </script>
 
 <template>
@@ -43,13 +57,14 @@ const lenis = useLenis()
             <StoryblokText :html="block.text" />
           </div>
 
-          <StoryblokLink
-            v-if="block.link"
-            :item="block.link"
+          <button
+            v-if="block.cta"
             class="mt-3"
+            type="button"
+            @click.prevent="scrollDown"
           >
             <ButtonAppearance :text="block.cta" />
-          </StoryblokLink>
+          </button>
         </div>
 
         <div

@@ -21,6 +21,91 @@ export interface BlockBentoStoryblok {
   [k: string]: any;
 }
 
+export interface AssetStoryblok {
+  alt: string | null;
+  copyright?: string | null;
+  fieldtype: "asset";
+  id: number;
+  filename: string | null;
+  name: string;
+  title: string | null;
+  focus: string | null;
+  meta_data?: {
+    [k: string]: any;
+  };
+  source?: string | null;
+  is_external_url?: boolean;
+  is_private?: boolean;
+  src?: string;
+  updated_at?: string;
+  width?: number | null;
+  height?: number | null;
+  aspect_ratio?: number | null;
+  public_id?: string | null;
+  content_type?: string;
+  [k: string]: any;
+}
+
+export interface BlockHeroStoryblok {
+  signal?: boolean;
+  headline?: string;
+  text?: RichtextStoryblok;
+  cta?: string;
+  media?: AssetStoryblok;
+  footnote?: RichtextStoryblok;
+  background: number | string;
+  component: "block_hero";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface BlockPlayStoryblok {
+  headline?: string;
+  text?: RichtextStoryblok;
+  background: number | string;
+  component: "block_play";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface BlockProjectsStoryblok {
+  headline?: string;
+  text?: RichtextStoryblok;
+  projects?: ProjectStoryblok[];
+  background: number | string;
+  component: "block_projects";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface BlockTextStoryblok {
+  headline?: string;
+  text?: RichtextStoryblok;
+  background: number | string;
+  component: "block_text";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface PageStoryblok {
+  blocks?: (
+    | BlockBentoStoryblok
+    | BlockHeroStoryblok
+    | BlockPlayStoryblok
+    | BlockProjectsStoryblok
+    | BlockTextStoryblok
+    | PageStoryblok
+    | ProjectStoryblok
+    | TestimonialStoryblok
+  )[];
+  seo_title: string;
+  seo_description: string;
+  seo_image: AssetStoryblok;
+  component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
 export type MultilinkStoryblok =
   | {
       fieldtype: "multilink";
@@ -94,89 +179,6 @@ export type MultilinkStoryblok =
       linktype: "asset";
       [k: string]: any;
     };
-
-export interface AssetStoryblok {
-  alt: string | null;
-  copyright?: string | null;
-  fieldtype: "asset";
-  id: number;
-  filename: string | null;
-  name: string;
-  title: string | null;
-  focus: string | null;
-  meta_data?: {
-    [k: string]: any;
-  };
-  source?: string | null;
-  is_external_url?: boolean;
-  is_private?: boolean;
-  src?: string;
-  updated_at?: string;
-  width?: number | null;
-  height?: number | null;
-  aspect_ratio?: number | null;
-  public_id?: string | null;
-  content_type?: string;
-  [k: string]: any;
-}
-
-export interface BlockHeroStoryblok {
-  signal?: boolean;
-  headline?: string;
-  text?: RichtextStoryblok;
-  cta?: string;
-  link?: MultilinkStoryblok;
-  media?: AssetStoryblok;
-  footnote?: RichtextStoryblok;
-  background: number | string;
-  component: "block_hero";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface BlockPlayStoryblok {
-  headline?: string;
-  text?: RichtextStoryblok;
-  background: number | string;
-  component: "block_play";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface BlockProjectsStoryblok {
-  headline?: string;
-  text?: RichtextStoryblok;
-  projects?: ProjectStoryblok[];
-  background: number | string;
-  component: "block_projects";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface BlockTextStoryblok {
-  headline?: string;
-  text?: RichtextStoryblok;
-  background: number | string;
-  component: "block_text";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface PageStoryblok {
-  blocks?: (
-    | BlockBentoStoryblok
-    | BlockHeroStoryblok
-    | BlockPlayStoryblok
-    | BlockProjectsStoryblok
-    | BlockTextStoryblok
-    | PageStoryblok
-    | ProjectStoryblok
-    | TestimonialStoryblok
-  )[];
-  component: "page";
-  _uid: string;
-  [k: string]: any;
-}
 
 export interface ProjectStoryblok {
   headline?: string;
