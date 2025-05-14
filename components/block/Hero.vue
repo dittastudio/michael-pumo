@@ -83,9 +83,9 @@ const scrollDown = () => {
           provider="storyblok"
           width="1000"
           format="webp"
-          quality="80"
+          quality="85"
           :modifiers="{ smart: true }"
-          alt="Michael Pumo - Freelance Web Developer and Designer"
+          alt="Michael Pumo - Freelance Web Developer and Designer in London"
         />
       </div>
     </div>
