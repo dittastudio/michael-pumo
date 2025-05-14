@@ -40,6 +40,8 @@ useSeoMeta({
 
     <AppFooter />
 
-    <DevGuide />
+    <DevOnly>
+      <DevGuide />
+    </DevOnly>
   </VueLenis>
 </template>
