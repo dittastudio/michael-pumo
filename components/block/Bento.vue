@@ -10,6 +10,7 @@ import Next from '@/assets/icons/next.svg'
 import Nuxt from '@/assets/icons/nuxt.svg'
 import Openai from '@/assets/icons/openai.svg'
 import React from '@/assets/icons/react.svg'
+import Shopify from '@/assets/icons/shopify.svg'
 import Supabase from '@/assets/icons/supabase.svg'
 import Tailwind from '@/assets/icons/tailwind.svg'
 import Ts from '@/assets/icons/ts.svg'
@@ -48,6 +49,7 @@ const technologies = [
   Nuxt,
   Openai,
   React,
+  Shopify,
   Supabase,
   Tailwind,
   Ts,
