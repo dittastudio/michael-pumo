@@ -36,7 +36,7 @@ const setPointer = () => {
     setPointer()
   }, interval)
 
-  const nextInterval = getRandomNumber(1000, 4000)
+  const nextInterval = getRandomNumber(1000, 3000)
   interval = nextInterval
 
   duration.value = getRandomNumber(250, nextInterval)
