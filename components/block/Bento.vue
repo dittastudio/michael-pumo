@@ -39,22 +39,70 @@ const { block } = defineProps<Props>()
 
 const background = block.background as 'bg-primary' | 'bg-secondary'
 const technologies = [
-  Astro,
-  Css,
-  Figma,
-  Git,
-  Gsap,
-  Netlify,
-  Next,
-  Nuxt,
-  Openai,
-  React,
-  Shopify,
-  Supabase,
-  Tailwind,
-  Ts,
-  Vite,
-  Vue,
+  {
+    name: 'Astro',
+    logo: Astro,
+  },
+  {
+    name: 'CSS',
+    logo: Css,
+  },
+  {
+    name: 'Figma',
+    logo: Figma,
+  },
+  {
+    name: 'Git',
+    logo: Git,
+  },
+  {
+    name: 'GSAP',
+    logo: Gsap,
+  },
+  {
+    name: 'Netlify',
+    logo: Netlify,
+  },
+  {
+    name: 'Next',
+    logo: Next,
+  },
+  {
+    name: 'Nuxt',
+    logo: Nuxt,
+  },
+  {
+    name: 'OpenAI',
+    logo: Openai,
+  },
+  {
+    name: 'React',
+    logo: React,
+  },
+  {
+    name: 'Shopify',
+    logo: Shopify,
+  },
+  {
+    name: 'Supabase',
+    logo: Supabase,
+  },
+  {
+    name: 'Tailwind',
+    logo: Tailwind,
+  },
+  {
+    name: 'TypeScript',
+    logo: Ts,
+  },
+  {
+    name: 'Vite',
+    logo: Vite,
+  },
+  {
+    name: 'Vue',
+    logo: Vue,
+  },
 ]
 
 const clients = [
@@ -230,12 +278,10 @@ const clients = [
                 classes-list="gap-2.5 pr-2.5"
               >
                 <template #item="item">
-                  <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out bg-primary/80">
-                    <Component
-                      :is="item"
-                      class="size-full text-tertiary"
-                    />
-                  </div>
+                  <ElementCube
+                    :name="item.name"
+                    :logo="item.logo"
+                  />
                 </template>
               </UiMarquee>
             </div>
