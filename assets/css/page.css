@@ -16,6 +16,15 @@
       --color-complementary: var(--color-green);
     }
 
+    &.theme-ditta {
+      --color-primary: var(--color-black);
+      --color-secondary: var(--color-offblack);
+      --color-tertiary: var(--color-white);
+      --color-muted: var(--color-grey);
+      --color-accent: var(--color-pink);
+      --color-complementary: var(--color-green);
+    }
+
     &.typeface-comic-neue {
       --font-sans: "Comic Neue", sans-serif, system-ui;
     }
