@@ -10,34 +10,36 @@ const { content } = defineProps<Props>()
 
 <template>
   <div>
-    <section
+    <template
       v-for="(block) in content.blocks"
       :key="block._uid"
     >
-      <BlockBento
-        v-if="block.component === 'block_bento'"
-        :block
-      />
+      <section v-if="block.component === 'block_hero'">
+        <BlockHero :block />
+      </section>
+    </template>
 
-      <BlockHero
-        v-else-if="block.component === 'block_hero'"
-        :block
-      />
+    <article>
+      <template
+        v-for="(block) in content.blocks"
+        :key="block._uid"
+      >
+        <section v-if="block.component === 'block_bento'">
+          <BlockBento :block />
+        </section>
 
-      <BlockPlay
-        v-else-if="block.component === 'block_play'"
-        :block
-      />
+        <section v-else-if="block.component === 'block_play'">
+          <BlockPlay :block />
+        </section>
 
-      <BlockProjects
-        v-else-if="block.component === 'block_projects'"
-        :block
-      />
+        <section v-else-if="block.component === 'block_projects'">
+          <BlockProjects :block />
+        </section>
 
-      <BlockText
-        v-else-if="block.component === 'block_text'"
-        :block
-      />
-    </section>
+        <section v-else-if="block.component === 'block_text'">
+          <BlockText :block />
+        </section>
+      </template>
+    </article>
   </div>
 </template>

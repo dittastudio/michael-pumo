@@ -228,7 +228,7 @@ const clients = [
                 classes-list="gap-2.5 pr-2.5"
               >
                 <template #item="item">
-                  <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out bg-primary">
+                  <div class="size-12 -outline-offset-1 outline-1 outline-tertiary/20 rounded-5 p-3 hover:outline-tertiary transition-colors duration-200 ease-in-out bg-primary/80">
                     <Component
                       :is="item"
                       class="size-full text-tertiary"
