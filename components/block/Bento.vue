@@ -165,23 +165,25 @@ const clients = [
               </a>
 
               <div>
-                <UiDate>
-                  <template #date="{ weekday, day, month }">
-                    <span class="text-18">
-                      {{ weekday }}
-                      {{ day }}
-                      {{ month }}
-                    </span>
-                  </template>
-                </UiDate>
+                <ClientOnly>
+                  <UiDate>
+                    <template #date="{ weekday, day, month }">
+                      <span class="text-18">
+                        {{ weekday }}
+                        {{ day }}
+                        {{ month }}
+                      </span>
+                    </template>
+                  </UiDate>
 
-                <UiClock>
-                  <template #clock="{ time }">
-                    <span class="flex flex-col">
-                      <span class="text-30 text-tertiary">{{ time }}</span>
-                    </span>
-                  </template>
-                </UiClock>
+                  <UiClock>
+                    <template #clock="{ time }">
+                      <span class="flex flex-col">
+                        <span class="text-30 text-tertiary">{{ time }}</span>
+                      </span>
+                    </template>
+                  </UiClock>
+                </ClientOnly>
               </div>
             </div>
           </template>
