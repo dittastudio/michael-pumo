@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useAppStore } from '@/stores/app'
 import { VueLenis } from 'lenis/vue'
+import { useAppStore } from '@/stores/app'
 
 // import type { SettingsStoryblok } from '@/types/storyblok'
 
