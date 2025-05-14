@@ -2,10 +2,6 @@
 import { VueLenis } from 'lenis/vue'
 import { useAppStore } from '@/stores/app'
 
-// import type { SettingsStoryblok } from '@/types/storyblok'
-
-// const settings = await useStoryblokStory<SettingsStoryblok>('/settings')
-
 const appStore = useAppStore()
 const customisations = computed(() => `theme-${appStore.getTheme} typeface-${appStore.getTypeface}`)
 
