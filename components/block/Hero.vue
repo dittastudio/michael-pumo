@@ -85,6 +85,7 @@ const scrollDown = () => {
           format="webp"
           quality="80"
           :modifiers="{ smart: true }"
+          alt="Michael Pumo - Freelance Web Developer and Designer"
         />
       </div>
     </div>

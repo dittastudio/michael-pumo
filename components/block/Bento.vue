@@ -154,14 +154,15 @@ const clients = [
         >
           <template #bottom>
             <div class="flex flex-col gap-6 h-full place-content-between">
-              <StoryblokLink
+              <a
+                href="mailto:hello@michaelpumo.com"
                 class="mt-3"
               >
                 <ButtonAppearance
                   text="Say hello"
                   size="small"
                 />
-              </StoryblokLink>
+              </a>
 
               <div>
                 <UiDate>
