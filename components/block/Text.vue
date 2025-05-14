@@ -24,7 +24,7 @@ const { block } = defineProps<Props>()
 
       <div
         v-if="storyblokRichTextContent(block.text)"
-        class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-(--color-tertiary) [&]:text-26"
+        class="[&_:is(p):not(:last-child)]:mb-7 text-tertiary text-26"
       >
         <StoryblokText :html="block.text" />
       </div>

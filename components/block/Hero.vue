@@ -69,7 +69,7 @@ const scrollDown = () => {
 
         <div
           v-if="storyblokRichTextContent(block.footnote)"
-          class="[&_:is(p):not(:last-child)]:mb-7 [&]:text-12"
+          class="[&_:is(p):not(:last-child)]:mb-7 text-12"
         >
           <StoryblokText :html="block.footnote" />
         </div>
