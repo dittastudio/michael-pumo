@@ -155,8 +155,9 @@ const clients = [
           <template #bottom>
             <div class="flex flex-col gap-6 h-full place-content-between">
               <a
-                href="mailto:hello@michaelpumo.com"
                 class="mt-3"
+                href="mailto:hello@michaelpumo.com"
+                target="_blank"
               >
                 <ButtonAppearance
                   text="Say hello"
