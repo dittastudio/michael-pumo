@@ -9,6 +9,7 @@ interface Props {
 const { block } = defineProps<Props>()
 
 const container = useTemplateRef<HTMLElement | null>('container')
+const ready = ref(false)
 const lenis = useLenis()
 
 const scrollDown = () => {
@@ -25,6 +26,10 @@ const scrollDown = () => {
     },
   )
 }
+
+onMounted(() => {
+  ready.value = true
+})
 </script>
 
 <template>
@@ -37,45 +42,60 @@ const scrollDown = () => {
       :class="block.background"
     >
       <div class="w-full min-h-svh md:min-h-auto p-gutter flex flex-col items-start justify-between">
-        <ElementChip
+        <EffectFadeReveal
           v-if="block.signal"
-          text="Open for new projects"
-        />
+          :delay="2200"
+        >
+          <ElementChip text="Open for new projects" />
+        </EffectFadeReveal>
 
         <div class="w-full my-auto flex flex-col items-start justify-center gap-7">
-          <h1
+          <EffectTextReveal
             v-if="block.headline"
             class="text-48 text-tertiary max-w-[18ch]"
+            tag="h1"
+            :delay="200"
           >
             {{ block.headline }}
-          </h1>
+          </EffectTextReveal>
 
-          <div
+          <EffectFadeReveal
             v-if="storyblokRichTextContent(block.text)"
+            :delay="1600"
             class="[&_:is(p):not(:last-child)]:mb-7 text-18 max-w-[40ch]"
           >
             <StoryblokText :html="block.text" />
-          </div>
+          </EffectFadeReveal>
 
-          <button
+          <EffectFadeReveal
             v-if="block.cta"
             class="mt-3"
             type="button"
+            tag="button"
+            :delay="1800"
             @click.prevent="scrollDown"
           >
             <ButtonAppearance :text="block.cta" />
-          </button>
+          </EffectFadeReveal>
         </div>
 
-        <div
+        <EffectFadeReveal
           v-if="storyblokRichTextContent(block.footnote)"
           class="[&_:is(p):not(:last-child)]:mb-7 text-12"
+          :delay="2000"
         >
           <StoryblokText :html="block.footnote" />
-        </div>
+        </EffectFadeReveal>
       </div>
 
-      <div>
+      <div class="relative">
+        <div
+          class="absolute top-0 left-0 z-10 size-full bg-secondary transition-[width] duration-1000 ease-outQuart"
+          :class="{
+            'w-0': ready,
+          }"
+        />
+
         <NuxtImg
           v-if="block.media?.filename && storyblokAssetType(block.media.filename) === 'image'"
           class="w-full h-full object-cover"
