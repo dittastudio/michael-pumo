@@ -11,7 +11,7 @@ const duration = computed(() => (!items?.length) ? '0s' : `${speed}s`)
 </script>
 
 <template>
-  <div class="marquee w-full flex overflow-hidden">
+  <div class="marquee w-full flex">
     <ul
       v-for="list in 2"
       :key="list"
