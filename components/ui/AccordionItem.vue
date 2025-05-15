@@ -30,17 +30,17 @@ onClickOutside(container, () => toggled.value = false)
     class="w-full transition-opacity duration-200 ease-in-out group-hover/accordion:opacity-20 hover:opacity-100"
     :class="{ 'border-b-1 border-b-tertiary/10': !isLast }"
   >
-    <h4
-      v-if="headline"
-      class="text-tertiary text-26 cursor-pointer pt-2.5 pb-3"
-      role="button"
-      tabindex="0"
-      :aria-expanded="toggled"
-      :aria-controls="id"
-      @click="toggle"
-      @keydown.enter="toggle"
-    >
-      {{ headline }}
+    <h4 v-if="headline">
+      <button
+        class="text-tertiary text-26 cursor-pointer pt-2.5 pb-3"
+        type="button"
+        :aria-expanded="toggled"
+        :aria-controls="id"
+        @click="toggle"
+        @keydown.enter="toggle"
+      >
+        {{ headline }}
+      </button>
     </h4>
 
     <div
