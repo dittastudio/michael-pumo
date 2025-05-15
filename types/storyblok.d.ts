@@ -21,6 +21,15 @@ export interface BlockBentoStoryblok {
   [k: string]: any;
 }
 
+export interface BlockFaqStoryblok {
+  headline?: string;
+  faq?: FaqStoryblok[];
+  background: number | string;
+  component: "block_faq";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface AssetStoryblok {
   alt: string | null;
   copyright?: string | null;
@@ -87,13 +96,23 @@ export interface BlockTextStoryblok {
   [k: string]: any;
 }
 
+export interface FaqStoryblok {
+  question?: string;
+  answer?: RichtextStoryblok;
+  component: "faq";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface PageStoryblok {
   blocks?: (
     | BlockBentoStoryblok
+    | BlockFaqStoryblok
     | BlockHeroStoryblok
     | BlockPlayStoryblok
     | BlockProjectsStoryblok
     | BlockTextStoryblok
+    | FaqStoryblok
     | PageStoryblok
     | ProjectStoryblok
     | TestimonialStoryblok

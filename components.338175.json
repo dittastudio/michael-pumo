@@ -87,6 +87,57 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "block_faq",
+      "display_name": "FAQ",
+      "description": "",
+      "created_at": "2025-05-15T11:51:18.796Z",
+      "updated_at": "2025-05-15T11:56:18.741Z",
+      "id": 7344089,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "id": "tcVT9AW4QPe7-DCDozfkHw"
+        },
+        "faq": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "faq"
+          ],
+          "id": "c0ik3J91Q1Ks6QyTPDMo1g"
+        },
+        "background": {
+          "type": "option",
+          "pos": 2,
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "backgrounds",
+          "exclude_empty_option": true,
+          "id": "qmUfHAaYSoOOGher-b4fNw"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "FAQ",
+      "component_group_uuid": "cdeec7ff-2980-4db4-8746-1bea35b255dc",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "block_hero",
       "display_name": "Hero",
       "description": "",
@@ -335,6 +386,52 @@
       "content_type_asset_preview": null,
       "metadata": {},
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "faq",
+      "display_name": null,
+      "description": "",
+      "created_at": "2025-05-15T11:49:55.590Z",
+      "updated_at": "2025-05-15T11:50:45.417Z",
+      "id": 7344088,
+      "schema": {
+        "question": {
+          "type": "text",
+          "pos": 0,
+          "id": "bzgazF8GTmCpTCxsno1WBA"
+        },
+        "answer": {
+          "type": "richtext",
+          "pos": 1,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "color",
+            "unset",
+            "italic",
+            "link",
+            "paragraph"
+          ],
+          "allow_target_blank": true,
+          "id": "IxCk0W13Tm-G18A7cIIXgg"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "faq",
+      "component_group_uuid": "96cc50c9-473d-4a38-81da-d035dc154a35",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Elements"
     },
     {
       "name": "page",

@@ -8,9 +8,10 @@ interface Props {
   tag?: string
   delay?: number
   duration?: number
+  trigger?: 'immediate' | 'scroll' | 'inview'
 }
 
-const { tag = 'p', delay = 0, duration = 0.5 } = defineProps<Props>()
+const { tag = 'p', delay = 0, duration = 0.5, trigger = 'immediate' } = defineProps<Props>()
 const text = useTemplateRef<string | null>('text')
 const ready = ref(false)
 

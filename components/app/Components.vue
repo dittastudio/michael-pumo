@@ -28,6 +28,10 @@ const { content } = defineProps<Props>()
           <BlockBento :block />
         </section>
 
+        <section v-else-if="block.component === 'block_faq'">
+          <BlockFaq :block />
+        </section>
+
         <section v-else-if="block.component === 'block_play'">
           <BlockPlay :block />
         </section>

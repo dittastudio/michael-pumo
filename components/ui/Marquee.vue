@@ -5,7 +5,7 @@ interface Props {
   classesList?: string
 }
 
-const { items = [], speed = 24 } = defineProps<Props>()
+const { items = [], speed = 24, classesList = '' } = defineProps<Props>()
 
 const duration = computed(() => (!items?.length) ? '0s' : `${speed}s`)
 </script>
