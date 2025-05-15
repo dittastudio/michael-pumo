@@ -41,7 +41,7 @@ onMounted(() => {
       class="md:min-h-svh grid md:grid-cols-2"
       :class="block.background"
     >
-      <div class="w-full min-h-svh md:min-h-auto p-gutter flex flex-col items-start justify-between">
+      <div class="w-full min-h-svh md:min-h-auto p-gutter flex gap-10 flex-col items-start justify-between">
         <EffectFadeReveal
           v-if="block.signal"
           :delay="2200"
@@ -49,7 +49,7 @@ onMounted(() => {
           <ElementChip text="Open for new projects" />
         </EffectFadeReveal>
 
-        <div class="w-full my-auto flex flex-col items-start justify-center gap-7">
+        <div class="w-full my-auto flex gap-7 flex-col items-start justify-center">
           <EffectTextReveal
             v-if="block.headline"
             class="text-48 text-tertiary max-w-[18ch]"
