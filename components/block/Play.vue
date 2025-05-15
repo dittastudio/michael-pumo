@@ -32,7 +32,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
   >
     <div class="flex flex-wrap justify-center gap-4">
       <CardStandard
-        class="w-75"
+        class="w-full xs:w-75"
         headline="Typeface"
         :text="`You are currently viewing ${appStore.getTypeface === 'saans' ? 'Saans' : 'Comic Neue 🤣'} typeface ${appStore.getTypeface === 'saans' ? 'by Displaay Type Foundry' : 'from Google Fonts'}. Maybe you'd like to switch things up?`"
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
@@ -49,7 +49,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
       </CardStandard>
 
       <CardStandard
-        class="w-75"
+        class="w-full xs:w-75"
         headline="Palette"
         :text="`Are things a little ${appStore.getTheme === 'dark' ? 'dark' : 'light'} around here? Switch up the palette mode to suit your preference.`"
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
@@ -66,7 +66,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
       </CardStandard>
 
       <CardStandard
-        class="w-75"
+        class="w-full xs:w-75"
         headline="Vibes"
         text="Sit back, relax and listen to the sound of the ocean waves crashing on the shore as you sip a piña colada 🏝️."
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"

@@ -23,7 +23,7 @@ import Ditta from '@/assets/logos/ditta.svg'
           <a
             href="https://ditta.studio"
             target="_blank"
-            class="inline-block text-tertiary"
+            class="block text-tertiary"
           >
             <Ditta class="w-15 h-auto" />
 
