@@ -1,6 +1,6 @@
-import type { AssetStoryblok } from '@/types/storyblok'
 import type { ISbStoryData } from 'storyblok-js-client'
 import type { Ref } from 'vue'
+import type { AssetStoryblok } from '@/types/storyblok'
 
 interface SEO {
   seo_title?: string

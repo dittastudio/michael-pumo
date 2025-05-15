@@ -195,7 +195,7 @@ const clients = [
     :background="background"
     class="overflow-x-hidden"
   >
-    <div class="w-full flex flex-col gap-gutter-md">
+    <div class="wrapper flex flex-col gap-gutter-md">
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-rows-2 lg:grid-cols-[clamp(250px,24%,300px)_auto_clamp(250px,24%,300px)]">
         <CardStandard
           class="sm:col-span-2 md:col-span-1 md:row-span-2"
