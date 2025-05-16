@@ -13,11 +13,11 @@ const { headline, link, media } = defineProps<Props>()
 <template>
   <StoryblokLink
     :item="link"
-    class="group block relative size-full rounded-10 overflow-hidden"
+    class="flex flex-col gap-6 relative overflow-hidden transition-opacity duration-200 ease-in-out group-hover/carousel:opacity-20 group-focus-within/carousel:opacity-20 hover:opacity-100 focus:opacity-100"
   >
     <NuxtImg
       v-if="media?.filename && storyblokAssetType(media.filename) === 'image'"
-      class="size-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-20 group-focus:opacity-20"
+      class="aspect-[2/3] size-full rounded-10 object-cover"
       :src="media.filename"
       provider="storyblok"
       width="300"
@@ -28,13 +28,8 @@ const { headline, link, media } = defineProps<Props>()
       :alt="`Project for ${media.alt || headline}`"
     />
 
-    <div
-      v-if="headline"
-      class="absolute inset-0 flex items-center justify-center"
-    >
-      <h3 class="text-30 text-tertiary transition-all duration-300 ease-in-out translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0">
-        {{ headline }}
-      </h3>
-    </div>
+    <h3 class="text-24 text-tertiary">
+      {{ headline }}
+    </h3>
   </StoryblokLink>
 </template>
