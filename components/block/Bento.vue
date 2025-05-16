@@ -306,7 +306,7 @@ const clients = [
         <UiMarquee
           :items="clients"
           :speed="60"
-          classes-list="gap-gutter pr-gutter"
+          classes-list="gap-gutter-md pr-gutter-md"
         >
           <template #item="item">
             <NuxtLink
@@ -318,7 +318,7 @@ const clients = [
             >
               <Component
                 :is="item.logo"
-                class="size-full text-tertiary"
+                class="w-auto h-full text-tertiary"
               />
 
               <span class="sr-only">
