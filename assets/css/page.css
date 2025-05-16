@@ -10,7 +10,7 @@
     
     &.theme-light {
       --color-primary: var(--color-white);
-      --color-secondary: var(--color-grey-light);
+      --color-secondary: var(--color-offwhite);
       --color-tertiary: var(--color-black);
       --color-accent: var(--color-blue);
       --color-complementary: var(--color-green);
@@ -20,7 +20,6 @@
       --color-primary: var(--color-black);
       --color-secondary: var(--color-offblack);
       --color-tertiary: var(--color-white);
-      --color-muted: var(--color-grey);
       --color-accent: var(--color-pink);
       --color-complementary: var(--color-green);
     }

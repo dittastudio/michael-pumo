@@ -11,18 +11,19 @@
 @theme {
   --color-\*: initial;
   --color-transparent: transparent;
+
   --color-white: #ffffff;
+  --color-offwhite: #f6f6f6;
   --color-black: #000000;
   --color-offblack: #111111;
-  --color-grey: #565656;
-  --color-grey-light: #f5f5f5;
-
+  
+  --color-grey: #808080;
   --color-pink: #FFA4D2;
   --color-peach: #FFBCA4;  
   --color-blue: #0c8ce9;
   --color-green: #C1FFA5;
 
-  /* Dark Theme */
+  /* Default Theme */
   --color-primary: var(--color-black);
   --color-secondary: var(--color-offblack);
   --color-tertiary: var(--color-white);
