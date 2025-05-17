@@ -32,7 +32,7 @@ onClickOutside(container, () => toggled.value = false)
   >
     <h4 v-if="headline">
       <button
-        class="text-tertiary text-26 cursor-pointer pt-2.5 pb-3 text-left"
+        class="text-tertiary text-24 sm:text-26 cursor-pointer pt-2.5 pb-3 text-left"
         type="button"
         :aria-expanded="toggled"
         :aria-controls="id"
