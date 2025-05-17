@@ -267,7 +267,7 @@ const clients = [
 
         <CardStandard
           class="md:col-start-2 lg:col-start-3"
-          headline="Technology"
+          headline="Web development"
           text="I’m a freelance digital web designer and frontend developer focusing on modern web technologies."
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >
