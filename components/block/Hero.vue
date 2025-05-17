@@ -27,7 +27,9 @@ const scrollDown = () => {
   )
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await wait(250)
+
   ready.value = true
 })
 </script>
