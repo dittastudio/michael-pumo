@@ -8,18 +8,44 @@ interface Props {
 
 const { error } = defineProps<Props>()
 
-console.log(error)
+const message = computed(() => error?.statusCode && error?.statusMessage
+  ? `${error?.statusCode} ${error?.statusMessage}`
+  : 'an unexpected error',
+)
 
 useHead({
-  title:
-    error?.statusCode && error?.statusMessage
-      ? `${error?.statusCode} ${error?.statusMessage}`
-      : 'An unexpected error occurred',
+  title: message.value.toLowerCase(),
 })
 </script>
 
 <template>
-  <div>
-    Error Page: {{ error.statusCode }} {{ error.statusMessage }}
+  <div class="w-full min-h-svh bg-primary p-gutter flex gap-10 flex-col items-start justify-between">
+    <div class="@container/error-content w-full my-auto flex gap-7 flex-col items-start justify-center">
+      <EffectTextReveal
+        class="text-tertiary max-w-[18ch] text-40 @md/error-content:text-48"
+        tag="h1"
+        :delay="200"
+      >
+        Our AI overlords can't help you with that.
+      </EffectTextReveal>
+
+      <EffectFadeReveal
+        tag="p"
+        :delay="1300"
+        class="[&_:is(p):not(:last-child)]:mb-7 text-18 max-w-[40ch]"
+      >
+        They were hallucinating something about a {{ message.toLowerCase() }}, but that's why we still need humans, right?
+      </EffectFadeReveal>
+
+      <EffectFadeReveal
+        class="mt-3"
+        type="button"
+        tag="a"
+        :delay="1500"
+        href="/"
+      >
+        <ButtonAppearance text="Get me outta here" />
+      </EffectFadeReveal>
+    </div>
   </div>
 </template>
