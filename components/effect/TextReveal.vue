@@ -15,7 +15,7 @@ const { tag = 'p', delay = 0, duration = 0.5, trigger = 'immediate' } = definePr
 const text = useTemplateRef<string | null>('text')
 const ready = ref(false)
 
-onMounted(async () => {
+const immediateFn = async () => {
   if (delay > 0) {
     await wait(delay)
   }
@@ -30,6 +30,12 @@ onMounted(async () => {
     autoAlpha: 0,
     stagger: 0.025,
   })
+}
+
+onMounted(async () => {
+  if (trigger === 'immediate') {
+    await immediateFn()
+  }
 })
 </script>
 
