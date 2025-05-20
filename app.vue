@@ -29,13 +29,20 @@ useSeoMeta({
   robots: 'index, follow',
 })
 
-const { onLoaded } = useAnalytics()
-
-onLoaded((...args) => {
-  window.plausible = window.plausible || function () {
-    (window.plausible.q = window.plausible.q || []).push(args)
-  }
+// const { onLoaded } =
+useScriptPlausibleAnalytics({
+  domain: 'michaelpumo.com',
+  extension: ['file-downloads', 'outbound-links'],
 })
+
+// onLoaded((...args) => {
+//   console.log('Plausible loaded', ...args)
+//   console.log('window.plausible', window.plausible.plausible)
+
+//   window.plausible = window.plausible || function () {
+//     (window.plausible.q = window.plausible.q || []).push(args)
+//   }
+// })
 </script>
 
 <template>
