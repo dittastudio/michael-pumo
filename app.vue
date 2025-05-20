@@ -28,6 +28,14 @@ useSeoMeta({
   titleTemplate: title => (title ? `${title} - Michael Pumo` : 'Michael Pumo'),
   robots: 'index, follow',
 })
+
+const { onLoaded } = useAnalytics()
+
+onLoaded((...args) => {
+  window.plausible = window.plausible || function () {
+    (window.plausible.q = window.plausible.q || []).push(args)
+  }
+})
 </script>
 
 <template>

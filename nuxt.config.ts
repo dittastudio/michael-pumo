@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxt/scripts',
     '@nuxtjs/sitemap',
     'lenis/nuxt',
     [
