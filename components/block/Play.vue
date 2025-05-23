@@ -9,8 +9,11 @@ interface Props {
 }
 
 const { block } = defineProps<Props>()
+const audio = useTemplateRef('audio')
 
-const play = ref(false)
+const togglePlayback = () => {
+  audio.value?.togglePlayback()
+}
 
 const setTypeface = () => {
   appStore.setTypeface(appStore.getTypeface === 'saans' ? 'comic-neue' : 'saans')
@@ -72,12 +75,12 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
         :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         role="button"
         tabindex="0"
-        @click="play = !play"
-        @keydown.enter="play = !play"
+        @click="togglePlayback"
+        @keydown.enter="togglePlayback"
       >
         <template #top>
           <div class="flex flex-col h-full place-content-center">
-            <SelectedAudio :play="play" />
+            <SelectedAudio ref="audio" />
           </div>
         </template>
       </CardStandard>

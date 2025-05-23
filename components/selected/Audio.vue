@@ -1,12 +1,6 @@
 <script lang="ts" setup>
 import { onBeforeUnmount, ref } from 'vue'
 
-interface Props {
-  play?: boolean
-}
-
-const { play = false } = defineProps<Props>()
-
 const amount = 6
 const src = '/audio/waves.mp3'
 const audio = useTemplateRef<HTMLAudioElement | null>('audio')
@@ -53,7 +47,7 @@ function updateBars() {
   animationFrame = requestAnimationFrame(updateBars)
 }
 
-function togglePlayback() {
+const togglePlayback = () => {
   if (!audio.value) {
     return
   }
@@ -75,13 +69,14 @@ function togglePlayback() {
   playing.value = !playing.value
 }
 
-watch(() => play, () => {
-  togglePlayback()
-})
-
 onBeforeUnmount(() => {
   cancelAnimationFrame(animationFrame)
   ctx?.close()
+})
+
+defineExpose({
+  togglePlayback,
+  playing,
 })
 </script>
 
