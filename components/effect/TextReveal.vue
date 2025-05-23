@@ -22,7 +22,13 @@ const immediateFn = async () => {
 
   ready.value = true
 
-  const split = SplitText.create(text.value, { type: 'words, chars' })
+  const split = SplitText.create(
+    text.value,
+    {
+      type: 'words, chars',
+      tag: 'span',
+    },
+  )
 
   gsap.from(split.chars, {
     duration,
