@@ -33,6 +33,7 @@ const immediateFn = async () => {
   gsap.from(split.chars, {
     duration,
     y: 5,
+    rotate: -5,
     autoAlpha: 0,
     stagger: 0.025,
   })
@@ -56,3 +57,9 @@ onMounted(async () => {
     <slot />
   </Component>
 </template>
+
+<style scoped>
+  :deep(span) {
+    display: inline-block;
+  }
+</style>
