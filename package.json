@@ -20,7 +20,7 @@
     "@pinia/nuxt": "^0.11.0",
     "@storyblok/nuxt": "^7.0.0",
     "@tailwindcss/vite": "^4.1.7",
-    "@unhead/vue": "^2.0.9",
+    "@unhead/vue": "^2.0.10",
     "@vueuse/core": "^13.2.0",
     "gsap": "^3.13.0",
     "keen-slider": "^6.8.6",
