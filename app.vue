@@ -10,6 +10,13 @@ const globalClasses = computed(() => [
   storyblokEditor(route.query) ? 'is-storyblok-editor' : '',
 ])
 
+const themes = {
+  light: '#f6f6f6',
+  dark: '#111111',
+}
+
+const themeColor = computed(() => themes[appStore.getTheme])
+
 useHead({
   htmlAttrs: {
     lang: 'en',
@@ -20,6 +27,7 @@ useHead({
 useSeoMeta({
   titleTemplate: title => (title ? `${title} - Michael Pumo` : 'Michael Pumo'),
   robots: 'index, follow',
+  themeColor,
 })
 
 useScriptPlausibleAnalytics({

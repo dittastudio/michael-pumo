@@ -30,8 +30,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         { name: 'author', content: 'Michael Pumo' },
-        { name: 'msapplication-TileColor', content: '#FFBBA5' },
-        { name: 'theme-color', content: '#FFBBA5' },
         { name: 'apple-mobile-web-app-title', content: 'Michael Pumo' },
         { name: 'google-site-verification', content: '3scjFuAQJfrnce34RE6TkwF21NlAnWk7VUwXi86bRs8' },
         { 'http-equiv': 'content-language', 'content': 'en-GB' },
