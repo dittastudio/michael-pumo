@@ -3,23 +3,16 @@ import { VueLenis } from 'lenis/vue'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
-const customisations = computed(() => `theme-${appStore.getTheme} typeface-${appStore.getTypeface}`)
+const route = useRoute()
+
+const globalClasses = computed(() => [
+  `theme-${appStore.getTheme} typeface-${appStore.getTypeface}`,
+  storyblokEditor(route.query) ? 'is-storyblok-editor' : '',
+])
 
 useHead({
   htmlAttrs: {
     lang: 'en',
-    class: customisations,
-  },
-})
-
-const route = useRoute()
-
-const globalClasses = computed(() => ({
-  'is-storyblok-editor': storyblokEditor(route.query),
-}))
-
-useHead({
-  htmlAttrs: {
     class: globalClasses,
   },
 })
