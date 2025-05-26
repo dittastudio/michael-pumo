@@ -1,3 +1,3 @@
 export default defineEventHandler(async () => {
-  return 'Hello World'
+  return `Hello World ${new Date().toISOString()}`
 })
