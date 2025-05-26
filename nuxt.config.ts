@@ -56,6 +56,9 @@ export default defineNuxtConfig({
       STORYBLOK_VERSION: process.env.NUXT_STORYBLOK_VERSION,
     },
   },
+  routeRules: {
+    '/**': { prerender: true },
+  },
   features: {
     noScripts: false,
   },
