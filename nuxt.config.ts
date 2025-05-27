@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     [
       '@storyblok/nuxt',
       {
-        accessToken: process.env.NUXT_STORYBLOK_TOKEN,
+        accessToken: process.env.STORYBLOK_TOKEN,
       },
     ],
   ],
@@ -52,12 +52,12 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      STORYBLOK_TOKEN: process.env.NUXT_STORYBLOK_TOKEN,
-      STORYBLOK_VERSION: process.env.NUXT_STORYBLOK_VERSION,
+      STORYBLOK_TOKEN: process.env.STORYBLOK_TOKEN,
+      STORYBLOK_VERSION: process.env.STORYBLOK_VERSION,
     },
   },
   routeRules: {
-    '/**': { prerender: true },
+    '/**': { prerender: process.env.PRERENDER === 'true' },
   },
   features: {
     noScripts: false,
