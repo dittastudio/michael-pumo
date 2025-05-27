@@ -59,6 +59,9 @@ export default defineNuxtConfig({
   routeRules: {
     '/**': { prerender: process.env.PRERENDER === 'true' },
   },
+  future: {
+    compatibilityVersion: 4,
+  },
   features: {
     noScripts: false,
   },
