@@ -12,8 +12,14 @@ const { headline, text, background = 'bg-primary' } = defineProps<Props>()
 
 <template>
   <div
-    class="w-full px-gutter pt-20 pb-50 flex flex-col gap-20"
-    :class="background"
+    class="w-full px-gutter pb-50 flex flex-col gap-20"
+    :class="[
+      background,
+      {
+        'pt-25 lg:pt-40': !headline && !storyblokRichTextContent(text),
+        'pt-25': headline || storyblokRichTextContent(text),
+      },
+    ]"
   >
     <div
       v-if="headline || storyblokRichTextContent(text)"
