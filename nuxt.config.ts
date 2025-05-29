@@ -80,6 +80,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  typescript: {
+    strict: true,
+  },
   postcss: {
     plugins: {
       'postcss-nested': {},
