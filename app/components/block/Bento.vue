@@ -201,6 +201,7 @@ const clients = [
   <SectionStandard
     v-editable="block"
     :headline="block.headline"
+    :headline-a11y="block.headline_a11y"
     :text="block.text"
     :background="background"
     class="overflow-x-hidden"

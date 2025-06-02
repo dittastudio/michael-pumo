@@ -12,6 +12,7 @@ export interface RichtextStoryblok {
 
 export interface BlockBentoStoryblok {
   headline?: string;
+  headline_a11y?: boolean;
   text?: RichtextStoryblok;
   about?: RichtextStoryblok;
   testimonials?: TestimonialStoryblok[];
@@ -70,6 +71,7 @@ export interface BlockHeroStoryblok {
 
 export interface BlockPlayStoryblok {
   headline?: string;
+  headline_a11y?: boolean;
   text?: RichtextStoryblok;
   background: number | string;
   component: "block_play";
@@ -79,6 +81,7 @@ export interface BlockPlayStoryblok {
 
 export interface BlockProjectsStoryblok {
   headline?: string;
+  headline_a11y?: boolean;
   text?: RichtextStoryblok;
   projects?: ProjectStoryblok[];
   background: number | string;

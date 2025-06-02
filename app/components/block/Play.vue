@@ -30,6 +30,7 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
   <SectionStandard
     v-editable="block"
     :headline="block.headline"
+    :headline-a11y="block.headline_a11y"
     :text="block.text"
     :background="background"
   >

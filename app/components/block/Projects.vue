@@ -36,6 +36,7 @@ const perView = computed(() => {
     v-editable="block"
     class="overflow-x-hidden"
     :headline="block.headline"
+    :headline-a11y="block.headline_a11y"
     :text="block.text"
     :background="background"
   >

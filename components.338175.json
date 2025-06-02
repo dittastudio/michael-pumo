@@ -5,7 +5,7 @@
       "display_name": "Bento",
       "description": "",
       "created_at": "2025-05-08T13:05:05.850Z",
-      "updated_at": "2025-05-13T21:07:52.274Z",
+      "updated_at": "2025-06-02T22:55:25.883Z",
       "id": 7316366,
       "schema": {
         "headline": {
@@ -13,9 +13,14 @@
           "pos": 0,
           "id": "pagQziW6QsWS5Ac1GPD1JA"
         },
+        "headline_a11y": {
+          "type": "boolean",
+          "pos": 1,
+          "id": "kzaVqYi0SmajjNlUBprDoQ"
+        },
         "text": {
           "type": "richtext",
-          "pos": 1,
+          "pos": 2,
           "allow_target_blank": true,
           "id": "oiq_cTdRRLCIkTnjbf9BOQ",
           "customize_toolbar": true,
@@ -29,7 +34,7 @@
         },
         "about": {
           "type": "richtext",
-          "pos": 2,
+          "pos": 3,
           "customize_toolbar": true,
           "toolbar": [
             "bold",
@@ -50,7 +55,7 @@
         },
         "testimonials": {
           "type": "bloks",
-          "pos": 3,
+          "pos": 4,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -60,7 +65,7 @@
         },
         "background": {
           "type": "option",
-          "pos": 4,
+          "pos": 5,
           "use_uuid": true,
           "required": true,
           "source": "internal",
@@ -91,7 +96,7 @@
       "display_name": "FAQ",
       "description": "",
       "created_at": "2025-05-15T11:51:18.796Z",
-      "updated_at": "2025-05-15T11:56:18.741Z",
+      "updated_at": "2025-06-02T23:06:33.600Z",
       "id": 7344089,
       "schema": {
         "headline": {
@@ -101,7 +106,7 @@
         },
         "faq": {
           "type": "bloks",
-          "pos": 1,
+          "pos": 2,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -111,7 +116,7 @@
         },
         "background": {
           "type": "option",
-          "pos": 2,
+          "pos": 3,
           "use_uuid": true,
           "required": true,
           "source": "internal",
@@ -225,7 +230,7 @@
       "display_name": "Play",
       "description": "",
       "created_at": "2025-05-08T12:50:12.175Z",
-      "updated_at": "2025-05-08T21:26:07.281Z",
+      "updated_at": "2025-06-02T22:57:27.017Z",
       "id": 7316292,
       "schema": {
         "headline": {
@@ -233,9 +238,14 @@
           "pos": 0,
           "id": "RUTaJOX1SZy5wISf1jsn9g"
         },
+        "headline_a11y": {
+          "type": "boolean",
+          "pos": 1,
+          "id": "_EHEaowdQmGsKctO8Xw7Kg"
+        },
         "text": {
           "type": "richtext",
-          "pos": 1,
+          "pos": 2,
           "customize_toolbar": true,
           "toolbar": [
             "bold",
@@ -249,7 +259,7 @@
         },
         "background": {
           "type": "option",
-          "pos": 2,
+          "pos": 3,
           "use_uuid": true,
           "required": true,
           "source": "internal",
@@ -280,7 +290,7 @@
       "display_name": "Projects",
       "description": "",
       "created_at": "2025-05-08T12:49:41.409Z",
-      "updated_at": "2025-05-09T13:25:43.078Z",
+      "updated_at": "2025-06-02T22:56:48.928Z",
       "id": 7316291,
       "schema": {
         "headline": {
@@ -288,9 +298,14 @@
           "pos": 0,
           "id": "Ug0NckH6SO6Zl42DISkEkQ"
         },
+        "headline_a11y": {
+          "type": "boolean",
+          "pos": 1,
+          "id": "2e6IGdXfTwyjd5o2ex92LA"
+        },
         "text": {
           "type": "richtext",
-          "pos": 1,
+          "pos": 2,
           "allow_target_blank": true,
           "id": "pmHOAsyVSZ-KPoQO6Jz4XA",
           "customize_toolbar": true,
@@ -304,7 +319,7 @@
         },
         "projects": {
           "type": "bloks",
-          "pos": 2,
+          "pos": 3,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -314,7 +329,7 @@
         },
         "background": {
           "type": "option",
-          "pos": 3,
+          "pos": 4,
           "use_uuid": true,
           "required": true,
           "source": "internal",
@@ -345,7 +360,7 @@
       "display_name": "Text",
       "description": "",
       "created_at": "2025-05-08T12:48:55.188Z",
-      "updated_at": "2025-05-08T19:33:44.708Z",
+      "updated_at": "2025-06-02T23:06:46.785Z",
       "id": 7316290,
       "schema": {
         "headline": {
@@ -355,13 +370,13 @@
         },
         "text": {
           "type": "richtext",
-          "pos": 1,
+          "pos": 2,
           "allow_target_blank": true,
           "id": "MF2LYNE1Qx6iF2uVVHzcFQ"
         },
         "background": {
           "type": "option",
-          "pos": 2,
+          "pos": 3,
           "use_uuid": true,
           "source": "internal",
           "datasource_slug": "backgrounds",
