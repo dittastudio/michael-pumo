@@ -9,8 +9,10 @@ import Netlify from '@/assets/icons/netlify.svg'
 import Next from '@/assets/icons/next.svg'
 import Nuxt from '@/assets/icons/nuxt.svg'
 import Openai from '@/assets/icons/openai.svg'
+import Prismic from '@/assets/icons/prismic.svg'
 import React from '@/assets/icons/react.svg'
 import Shopify from '@/assets/icons/shopify.svg'
+import Storyblok from '@/assets/icons/storyblok.svg'
 import Supabase from '@/assets/icons/supabase.svg'
 import Tailwind from '@/assets/icons/tailwind.svg'
 import Ts from '@/assets/icons/ts.svg'
@@ -76,12 +78,20 @@ const technologies = [
     logo: Openai,
   },
   {
+    name: 'Prismic',
+    logo: Prismic,
+  },
+  {
     name: 'React',
     logo: React,
   },
   {
     name: 'Shopify',
     logo: Shopify,
+  },
+  {
+    name: 'Storyblok',
+    logo: Storyblok,
   },
   {
     name: 'Supabase',
