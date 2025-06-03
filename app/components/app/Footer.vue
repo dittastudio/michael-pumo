@@ -12,7 +12,10 @@ import Ditta from '@/assets/logos/ditta.svg'
         </p>
 
         <p class="text-24 sm:text-26 text-tertiary">
-          <a href="mailto:hello@michaelpumo.com">
+          <a
+            class="no-underline"
+            href="mailto:hello@michaelpumo.com"
+          >
             hello@michaelpumo.com
           </a>
         </p>

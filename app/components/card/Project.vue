@@ -13,7 +13,7 @@ const { headline, link, media } = defineProps<Props>()
 <template>
   <StoryblokLink
     :item="link"
-    class="flex flex-col gap-6 relative overflow-hidden transition-opacity duration-200 ease-in-out group-hover/carousel:opacity-20 group-focus-within/carousel:opacity-20 hover:opacity-100 focus:opacity-100"
+    class="no-underline flex flex-col gap-6 relative overflow-hidden transition-opacity duration-200 ease-in-out group-hover/carousel:opacity-20 group-focus-within/carousel:opacity-20 hover:opacity-100 focus:opacity-100"
   >
     <NuxtImg
       v-if="media?.filename && storyblokAssetType(media.filename) === 'image'"

@@ -40,7 +40,9 @@
 
   a {
     color: var(--color-accent);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+    text-decoration-thickness: 0.025rem;
   }
 
   .wrapper {

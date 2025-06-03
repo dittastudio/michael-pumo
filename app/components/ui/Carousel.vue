@@ -108,17 +108,18 @@ onMounted(() => {
   >
     <div
       v-if="slider"
-      class="flex items-center justify-between"
+      class="flex justify-between"
       :class="[
         classesControls,
         {
           'order-last': controlsPosition === 'bottom',
         }]"
     >
-      <div class="flex items-center justify-start gap-2">
+      <div class="flex justify-start -ml-1">
         <button
           v-for="(group, idx) in groups"
           :key="idx"
+          class="px-1"
           type="button"
           @click="slider.moveToIdx(group.start)"
         >
