@@ -1,6 +1,6 @@
 import type { ImageModifiers } from '@nuxt/image'
 import type { LocationQuery } from 'vue-router'
-import type { RichtextStoryblok } from '@/types/storyblok'
+import type { RichtextStoryblok } from '@@/types/storyblok'
 
 const storyblokEditor = (search: LocationQuery) => '_storyblok' in search
 

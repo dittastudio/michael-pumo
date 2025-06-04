@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { PageStoryblok } from '@/types/storyblok'
+import type { PageStoryblok } from '@@/types/storyblok'
 
 interface Props {
   content: PageStoryblok

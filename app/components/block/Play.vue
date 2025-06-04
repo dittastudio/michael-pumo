@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlockPlayStoryblok } from '@/types/storyblok'
+import type { BlockPlayStoryblok } from '@@/types/storyblok'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()

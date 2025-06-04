@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { RichtextStoryblok } from '@/types/storyblok'
+import type { RichtextStoryblok } from '@@/types/storyblok'
 
 interface Props {
   quote?: RichtextStoryblok | string
