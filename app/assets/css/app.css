@@ -22,6 +22,7 @@
   --color-peach: #FFBCA4;  
   --color-blue: #0c8ce9;
   --color-green: #C1FFA5;
+  --color-purple: #f1a3ff;
 
   /* Default Theme */
   --color-primary: var(--color-black);

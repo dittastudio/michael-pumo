@@ -1,3 +1,35 @@
 @utility mask-sides {
   mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
 }
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotate-angle {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+@utility bg-conic-gradient {
+  background: conic-gradient(
+    from var(--angle) at 50% 50%,
+    var(--color-peach) 0%,
+    var(--color-purple) 12.5%,
+    var(--color-blue) 25%,
+    var(--color-green) 37.5%,
+    var(--color-pink) 50%,
+    var(--color-peach) 62.5%,
+    var(--color-purple) 75%,
+    var(--color-blue) 87.5%,
+    var(--color-peach) 100%
+  );
+
+  animation: rotate-angle 5s linear infinite;
+}

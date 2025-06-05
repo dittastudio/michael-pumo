@@ -14,10 +14,42 @@ const sizes = {
 </script>
 
 <template>
-  <span
-    class="inline-block rounded-30 bg-tertiary text-primary font-medium"
-    :class="sizes[size]"
-  >
-    {{ text }}
+  <span class="group/button relative inline-block">
+    <span
+      class="
+        relative
+        z-1
+        inline-block
+        rounded-30
+        bg-tertiary
+        text-primary
+        font-medium
+      "
+      :class="sizes[size]"
+    >
+      {{ text }}
+    </span>
+
+    <span
+      class="
+        absolute
+        -inset-1
+        block
+        bg-conic-gradient
+        rounded-30
+        z-0
+        pointer-events-none
+        transition-[opacity,scale]
+        duration-700
+        ease-out
+        blur-xl
+        opacity-0
+        scale-75
+        group-hover/button:opacity-100
+        group-hover/button:scale-100
+      "
+    />
+
+    <!-- blur-lg opacity-0 group-hover/button:opacity-90 -->
   </span>
 </template>
