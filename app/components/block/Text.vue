@@ -22,12 +22,12 @@ const { block } = defineProps<Props>()
         {{ block.headline }}
       </h3>
 
-      <div
+      <EffectTextFiller
         v-if="storyblokRichTextContent(block.text)"
         class="[&_:is(p):not(:last-child)]:mb-7 text-tertiary text-24 sm:text-26"
       >
         <StoryblokText :html="block.text" />
-      </div>
+      </EffectTextFiller>
     </div>
   </div>
 </template>
