@@ -34,7 +34,7 @@ const storyblokImage = (
   const path = image(filename ?? '', {
     width: 0,
     height: 0,
-    smart: false, // Must be set to false if focal point is used
+    smart: false,
     quality: 80,
     blur: 0,
     focal: '',
