@@ -1,6 +1,6 @@
+import type { RichtextStoryblok } from '@@/types/storyblok'
 import type { ImageModifiers } from '@nuxt/image'
 import type { LocationQuery } from 'vue-router'
-import type { RichtextStoryblok } from '@@/types/storyblok'
 
 const storyblokEditor = (search: LocationQuery) => '_storyblok' in search
 
@@ -24,8 +24,6 @@ const storyblokAssetType = (filename: string): 'image' | 'video' | 'other' => {
 
   return 'other'
 }
-
-const storyblokImageUrlUpdate = (url: string) => url.replace('//a.storyblok.com', '//a2.storyblok.com')
 
 const storyblokImage = (
   filename: string | null | undefined,
@@ -52,27 +50,10 @@ const storyblokRichTextContent = (richtext: RichtextStoryblok | undefined): bool
 const storyblokSlug = (path: string): string =>
   ['/', ''].includes(path) ? '/home' : path.replace(/\/+$/, '')
 
-const storyblokImageDimensions = (
-  filename: string | null | undefined,
-): { width: number, height: number } => {
-  if (!filename?.length) {
-    return {
-      width: 0,
-      height: 0,
-    }
-  }
-
-  const [width, height] = filename.split('/')[5].split('x')
-
-  return { width: Number(width), height: Number(height) }
-}
-
 export {
   storyblokAssetType,
   storyblokEditor,
   storyblokImage,
-  storyblokImageDimensions,
-  storyblokImageUrlUpdate,
   storyblokRichTextContent,
   storyblokSlug,
 }
