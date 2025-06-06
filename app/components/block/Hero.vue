@@ -52,7 +52,7 @@ onMounted(async () => {
       <div class="@container/hero-content w-full my-auto flex gap-7 flex-col items-start justify-center">
         <EffectTextReveal
           v-if="block.headline"
-          class="text-tertiary max-w-[18ch] text-40 @md/hero-content:text-48 text-pretty"
+          class="text-tertiary max-w-[18ch] text-36 @md/hero-content:text-48 text-pretty"
           tag="h1"
           :delay="200"
         >
@@ -62,7 +62,7 @@ onMounted(async () => {
         <EffectFadeReveal
           v-if="storyblokRichTextContent(block.text)"
           :delay="1600"
-          class="[&_:is(p):not(:last-child)]:mb-7 text-18 max-w-[40ch]"
+          class="[&_:is(p):not(:last-child)]:mb-7 text-16 @md/hero-content:text-18 max-w-[40ch]"
         >
           <StoryblokText :html="block.text" />
         </EffectFadeReveal>
