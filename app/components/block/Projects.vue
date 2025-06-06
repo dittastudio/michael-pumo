@@ -44,11 +44,12 @@ const perView = computed(() => {
       :per-view="perView"
       :items="block.projects"
     >
-      <template #item="{ headline, link, media }">
+      <template #item="{ headline, link, media, progress }">
         <CardProject
           :headline="headline"
           :link="link"
           :media="media"
+          :progress="progress"
         />
       </template>
     </UiCarousel>

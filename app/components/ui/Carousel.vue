@@ -26,6 +26,7 @@ const {
 const ready = ref(false)
 const amount = items?.length ?? 0
 const collection = ref(1)
+const progress = ref(0)
 
 const groups = computed(() => {
   const totalGroups = Math.ceil(amount / perView)
@@ -70,12 +71,16 @@ const [container, slider] = useKeenSlider({
   dragSpeed: 0.5,
   rubberband: true,
   defaultAnimation: {
-    duration: 1000,
-    // easing: (t) => t,
+    duration: 2000,
   },
   slides: {
     perView,
     spacing,
+  },
+  created(slider) {
+    slider.on('detailsChanged', (s) => {
+      progress.value = s.track.details.progress
+    })
   },
   slideChanged(s) {
     const slideIndex = s.track.details.rel
@@ -91,6 +96,9 @@ const [container, slider] = useKeenSlider({
 
 watch(() => perView, (newValue) => {
   slider.value?.update({
+    defaultAnimation: {
+      duration: 2000,
+    },
     slides: {
       perView: newValue,
       spacing,
@@ -173,7 +181,7 @@ onMounted(() => {
       >
         <slot
           name="item"
-          v-bind="item"
+          v-bind="{ ...item, progress }"
         />
       </li>
     </ul>
