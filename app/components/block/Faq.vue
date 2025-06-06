@@ -26,11 +26,12 @@ const { block } = defineProps<Props>()
         v-if="block.faq"
         :items="block.faq"
       >
-        <template #item="{ question, answer, isLast }">
+        <template #item="{ question, answer, index, isLast }">
           <UiAccordionItem
             v-if="question && answer"
             :headline="question"
             :text="answer"
+            :index="index"
             :is-last="isLast"
           />
         </template>

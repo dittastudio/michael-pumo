@@ -14,7 +14,7 @@ const { items = [] } = defineProps<Props>()
     >
       <slot
         name="item"
-        v-bind="{ ...item, isLast: index + 1 === items.length }"
+        v-bind="{ ...item, index, isLast: index + 1 === items.length }"
       />
     </li>
   </ul>

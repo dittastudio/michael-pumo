@@ -5,10 +5,11 @@ import { onClickOutside } from '@vueuse/core'
 interface Props {
   headline?: string
   text?: RichtextStoryblok
+  index?: number
   isLast?: boolean
 }
 
-const { headline, text, isLast = false } = defineProps<Props>()
+const { headline, text, index, isLast = false } = defineProps<Props>()
 
 const container = useTemplateRef<HTMLDivElement>('container')
 const content = useTemplateRef<HTMLDivElement>('content')
@@ -28,17 +29,24 @@ onClickOutside(container, () => toggled.value = false)
   <div
     ref="container"
     class="w-full transition-opacity duration-200 ease-in-out group-hover/accordion:opacity-20 hover:opacity-100"
-    :class="{ 'border-b-1 border-b-tertiary/10': !isLast }"
   >
+    <!-- :class="{ 'border-b-1 border-b-tertiary/10': !isLast }" -->
     <h4 v-if="headline">
       <button
-        class="text-tertiary text-24 sm:text-26 cursor-pointer pt-2.5 pb-3 text-left"
+        class="flex gap-3 text-tertiary text-20 sm:text-26 cursor-pointer pt-2.5 pb-3 text-left"
         type="button"
         :aria-expanded="toggled"
         :aria-controls="id"
         @click="toggle"
         @keydown.enter="toggle"
       >
+        <span
+          v-if="typeof index === 'number'"
+          class="text-grey"
+        >
+          {{ (index + 1).toString().padStart(2, '0') }}
+        </span>
+
         {{ headline }}
       </button>
     </h4>
