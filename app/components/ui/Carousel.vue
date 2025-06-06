@@ -49,12 +49,12 @@ const getGroup = (num: number) => {
     const current = g[i]
     const next = g[i + 1]
 
-    if (next) {
+    if (next && current) {
       if (num >= current.start && num < next.start) {
         return current
       }
     }
-    else {
+    else if (current) {
       if (num >= current.start) {
         return current
       }
@@ -80,6 +80,10 @@ const [container, slider] = useKeenSlider({
   slideChanged(s) {
     const slideIndex = s.track.details.rel
     const group = getGroup(slideIndex)
+
+    if (!group) {
+      return
+    }
 
     collection.value = group.collection
   },
