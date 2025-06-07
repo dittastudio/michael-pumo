@@ -24,6 +24,13 @@ const sizes = {
         bg-tertiary
         text-primary
         font-medium
+        transition-[box-shadow]
+        ease-out
+        duration-2000
+        shadow-xl
+        shadow-black/0
+        group-hover/button:duration-500
+        group-hover/button:shadow-black/30
       "
       :class="sizes[size]"
     >
@@ -50,7 +57,5 @@ const sizes = {
         group-hover/button:scale-100
       "
     />
-
-    <!-- blur-lg opacity-0 group-hover/button:opacity-90 -->
   </span>
 </template>
