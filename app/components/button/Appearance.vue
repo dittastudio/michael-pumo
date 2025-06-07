@@ -32,19 +32,20 @@ const sizes = {
 
     <span
       class="
+        pointer-events-none
+        bg-conic-gradient
         absolute
         -inset-1
         block
-        bg-conic-gradient
         rounded-30
         z-0
-        pointer-events-none
-        transition-[opacity,scale]
-        duration-700
-        ease-out
         blur-xl
+        transition-[opacity,scale]
+        ease-out
+        duration-2000
         opacity-0
         scale-75
+        group-hover/button:duration-500
         group-hover/button:opacity-100
         group-hover/button:scale-100
       "
