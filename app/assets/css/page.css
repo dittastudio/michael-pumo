@@ -1,4 +1,8 @@
 @layer theme {
+  * {
+    accent-color: var(--color-accent);
+  }
+
   *::selection {
     background-color: --alpha(var(--color-accent) / 99%);
     color: var(--color-primary);
