@@ -51,7 +51,7 @@
 
   .wrapper {
     width: 100%;
-    max-width: var(--breakpoint-2xl);
+    max-width: var(--breakpoint-xl);
     margin-inline: auto;
 
     &-x {
