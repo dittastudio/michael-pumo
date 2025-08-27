@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Blocks",
+    "id": 552163,
+    "uuid": "cdeec7ff-2980-4db4-8746-1bea35b255dc",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "Elements",
+    "id": 552601,
+    "uuid": "96cc50c9-473d-4a38-81da-d035dc154a35",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "Types",
+    "id": 552170,
+    "uuid": "54c4eab2-4f74-44d3-a7c0-f839b558578a",
+    "parent_id": null,
+    "parent_uuid": null
+  }
+]
