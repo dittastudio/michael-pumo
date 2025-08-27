@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { BlockHeroStoryblok } from '@@/types/storyblok'
+import type { BlockHero } from '@@/.storyblok/types/338175/storyblok-components'
 import { useLenis } from 'lenis/vue'
 
 interface Props {
-  block: BlockHeroStoryblok
+  block: BlockHero
 }
 
 const { block } = defineProps<Props>()

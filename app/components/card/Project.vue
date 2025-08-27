@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { AssetStoryblok, MultilinkStoryblok } from '@@/types/storyblok'
+import type { StoryblokAsset, StoryblokMultilink } from '@@/.storyblok/types/storyblok'
 
 interface Props {
   headline?: string
-  link?: MultilinkStoryblok
-  media?: AssetStoryblok
+  link?: StoryblokMultilink
+  media?: StoryblokAsset
   progress?: number
 }
 

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { BlockBentoStoryblok } from '@@/types/storyblok'
+import type { BlockBento } from '@@/.storyblok/types/338175/storyblok-components'
+
 import Astro from '@/assets/icons/astro.svg'
 import Css from '@/assets/icons/css.svg'
 import Figma from '@/assets/icons/figma.svg'
@@ -34,7 +35,7 @@ import Structure from '@/assets/logos/structure.svg'
 import Studio206 from '@/assets/logos/studio-206.svg'
 
 interface Props {
-  block: BlockBentoStoryblok
+  block: BlockBento
 }
 
 const { block } = defineProps<Props>()

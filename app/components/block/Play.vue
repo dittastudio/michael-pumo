@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { BlockPlayStoryblok } from '@@/types/storyblok'
+import type { BlockPlay } from '@@/.storyblok/types/338175/storyblok-components'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
 
 interface Props {
-  block: BlockPlayStoryblok
+  block: BlockPlay
 }
 
 const { block } = defineProps<Props>()

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import type { RichtextStoryblok } from '@@/types/storyblok'
+import type { StoryblokRichtext } from '@@/.storyblok/types/storyblok'
 import { onClickOutside } from '@vueuse/core'
 
 interface Props {
   headline?: string
-  text?: RichtextStoryblok
+  text?: StoryblokRichtext
   index?: number
   isLast?: boolean
 }
 
-const { headline, text, index, isLast = false } = defineProps<Props>()
+const { headline, text, index } = defineProps<Props>()
 
 const container = useTemplateRef<HTMLDivElement>('container')
 const content = useTemplateRef<HTMLDivElement>('content')

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { RichtextStoryblok } from '@@/types/storyblok'
+import type { StoryblokRichtext } from '@@/.storyblok/types/storyblok'
 
 interface Props {
   headline?: string
-  text?: RichtextStoryblok | string
+  text?: StoryblokRichtext | string
   padded?: boolean
   background?: 'primary' | 'secondary'
 }
