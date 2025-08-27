@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { onBeforeUnmount, ref } from 'vue'
-
 const amount = 6
 const src = '/audio/waves.mp3'
 const audio = useTemplateRef<HTMLAudioElement | null>('audio')
