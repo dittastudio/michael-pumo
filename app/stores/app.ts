@@ -3,13 +3,13 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore(
   'app',
   () => {
-    const theme = ref<App.Theme>('dark')
+    const theme = ref<App.Themes>('dark')
     const typeface = ref<App.Typeface>('saans')
 
     const getTheme = computed(() => theme.value)
     const getTypeface = computed(() => typeface.value)
 
-    function setTheme(value: App.Theme) {
+    function setTheme(value: App.Themes) {
       theme.value = value
     }
 
