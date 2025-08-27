@@ -21,6 +21,10 @@ const getTimeNow = (): string[] =>
 const updateClock = () => {
   const [timeNow, timeZone] = getTimeNow()
 
+  if (!timeNow || !timeZone) {
+    return
+  }
+
   time.value = timeNow
   zone.value = timeZone
   raf.value = window.requestAnimationFrame(updateClock)
