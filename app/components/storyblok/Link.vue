@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { StoryblokMultilink } from '@@/.storyblok/types/storyblok'
+import type { StoryblokMultilink } from '#storyblok-types'
 
 interface Props {
   item?: StoryblokMultilink

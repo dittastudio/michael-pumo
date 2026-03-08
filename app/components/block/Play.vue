@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlockPlay } from '@@/.storyblok/types/338175/storyblok-components'
+import type { BlockPlay } from '#storyblok-components'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()

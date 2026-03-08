@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlockBento } from '@@/.storyblok/types/338175/storyblok-components'
+import type { BlockBento } from '#storyblok-components'
 
 import Astro from '@/assets/icons/astro.svg'
 import Css from '@/assets/icons/css.svg'

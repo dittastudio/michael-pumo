@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Page } from '@@/.storyblok/types/338175/storyblok-components'
+import type { Page } from '#storyblok-components'
 
 const route = useRoute()
 const story = await useStory<Page>(route.path)

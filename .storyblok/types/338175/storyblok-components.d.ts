@@ -102,3 +102,5 @@ export interface Testimonial {
   component: "testimonial";
   _uid: string;
 }
+
+export type ContentType = Page;

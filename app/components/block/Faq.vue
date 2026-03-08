@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlockFaq } from '@@/.storyblok/types/338175/storyblok-components'
+import type { BlockFaq } from '#storyblok-components'
 
 interface Props {
   block: BlockFaq

@@ -1,4 +1,6 @@
+import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
+import devtoolsJson from 'vite-plugin-devtools-json'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
@@ -56,6 +58,10 @@ export default defineNuxtConfig({
       STORYBLOK_VERSION: process.env.STORYBLOK_VERSION,
     },
   },
+  alias: {
+    '#storyblok-components': fileURLToPath(new URL('./.storyblok/types/338175/storyblok-components', import.meta.url)),
+    '#storyblok-types': fileURLToPath(new URL('./.storyblok/types/storyblok', import.meta.url)),
+  },
   routeRules: {
     '/**': { prerender: process.env.PRERENDER === 'true' },
   },
@@ -68,6 +74,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-04-13',
   vite: {
     plugins: [
+      devtoolsJson(),
       tailwindcss(),
       svgLoader({
         svgo: false,

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlockHero } from '@@/.storyblok/types/338175/storyblok-components'
+import type { BlockHero } from '#storyblok-components'
 import { useLenis } from 'lenis/vue'
 
 interface Props {

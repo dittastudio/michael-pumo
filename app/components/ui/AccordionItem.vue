@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { StoryblokRichtext } from '@@/.storyblok/types/storyblok'
+import type { StoryblokRichtext } from '#storyblok-types'
 import { onClickOutside } from '@vueuse/core'
 
 interface Props {
