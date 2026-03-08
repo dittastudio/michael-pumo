@@ -24,7 +24,7 @@ const sizes = {
         bg-tertiary
         text-primary
         font-medium
-        transition-[box-shadow]
+        transition-shadow
         ease-out
         duration-2000
         shadow-xl

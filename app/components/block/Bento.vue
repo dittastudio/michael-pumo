@@ -253,7 +253,7 @@ const clients = [
         </CardStandard>
 
         <CardStandard
-          class="overflow-x-hidden sm:col-span-2 md:order-1 lg:order-none lg:col-span-1 lg:col-start-2 lg:row-span-2"
+          class="overflow-x-hidden sm:col-span-2 md:order-1 lg:order-0 lg:col-span-1 lg:col-start-2 lg:row-span-2"
           :padded="false"
           :background="block.background === 'bg-primary' ? 'secondary' : 'primary'"
         >

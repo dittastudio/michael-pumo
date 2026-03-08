@@ -1,4 +1,4 @@
-import type { RichtextStoryblok } from '@@/types/storyblok'
+import type { StoryblokRichtext } from '#storyblok-types'
 import type { ImageModifiers } from '@nuxt/image'
 import type { LocationQuery } from 'vue-router'
 
@@ -37,7 +37,6 @@ const storyblokImage = (
     smart: false,
     quality: 80,
     blur: 0,
-    focal: '',
     format: 'webp',
     ...modifiers,
   })
@@ -45,7 +44,7 @@ const storyblokImage = (
   return path
 }
 
-const storyblokRichTextContent = (richtext: RichtextStoryblok | undefined): boolean => Boolean(richtext?.content?.[0]?.content?.length)
+const storyblokRichTextContent = (richtext: StoryblokRichtext | undefined): boolean => Boolean(richtext?.content?.[0]?.content?.length)
 
 const storyblokSlug = (path: string): string =>
   ['/', ''].includes(path) ? '/home' : path.replace(/\/+$/, '')

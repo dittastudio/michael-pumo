@@ -15,7 +15,6 @@ const href
       : item?.cached_url
 
 const customAttributes = {
-  // class: item?.class,
   title: item?.title,
   rel: item?.rel,
 }

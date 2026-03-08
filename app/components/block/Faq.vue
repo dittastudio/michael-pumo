@@ -6,15 +6,16 @@ interface Props {
 }
 
 const { block } = defineProps<Props>()
+const background = block.background as 'bg-primary' | 'bg-secondary'
 </script>
 
 <template>
   <div
     v-editable="block"
     class="w-full px-gutter py-gutter-xl"
-    :class="block.background"
+    :background="background"
   >
-    <div class="w-full mx-auto md:max-w-[615px]">
+    <div class="w-full mx-auto md:max-w-153.75">
       <h3
         v-if="block.headline"
         class="text-18 mb-2"

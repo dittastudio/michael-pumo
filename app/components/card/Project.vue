@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
       class="no-underline flex flex-col gap-6 relative overflow-hidden transition-opacity duration-200 ease-in-out group-hover/carousel:opacity-20 group-focus-within/carousel:opacity-20 hover:opacity-100 focus:opacity-100"
       @focus="updatePosition"
     >
-      <div class="relative overflow-hidden w-full aspect-[2/3] rounded-10">
+      <div class="relative overflow-hidden w-full aspect-2/3 rounded-10">
         <NuxtImg
           v-if="media?.filename && storyblokAssetType(media.filename) === 'image'"
           class="absolute top-0 left-1/2 max-w-none w-[calc(100%+225px)] h-full object-cover"

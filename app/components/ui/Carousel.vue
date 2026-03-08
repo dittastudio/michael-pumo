@@ -171,7 +171,7 @@ onMounted(() => {
 
     <ul
       ref="container"
-      class="group/carousel keen-slider !overflow-visible"
+      class="group/carousel keen-slider overflow-visible!"
     >
       <li
         v-for="(item, index) in items"

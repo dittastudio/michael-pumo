@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { block } = defineProps<Props>()
-
+const background = block.background as 'bg-primary' | 'bg-secondary'
 const container = useTemplateRef<HTMLElement | null>('container')
 const ready = ref(false)
 const lenis = useLenis()
@@ -39,7 +39,7 @@ onMounted(async () => {
     ref="container"
     v-editable="block"
     class="w-full md:min-h-svh grid md:grid-cols-2"
-    :class="block.background"
+    :class="background"
   >
     <div class="w-full min-h-svh md:min-h-auto p-gutter flex gap-10 flex-col items-start justify-between">
       <EffectFadeReveal

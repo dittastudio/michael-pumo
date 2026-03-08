@@ -20,7 +20,7 @@ const backgroundColor = {
       :class="backgroundColor[color]"
     />
 
-    <span class="block -mt-0.25">
+    <span class="block -mt-px">
       {{ text }}
     </span>
   </p>

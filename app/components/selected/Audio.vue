@@ -8,7 +8,7 @@ const barHeights = ref<number[]>(Array.from({ length: amount }).map(() => getRan
 let ctx: AudioContext | null = null
 let analyser: AnalyserNode
 let source: MediaElementAudioSourceNode
-let dataArray: Uint8Array
+let dataArray: Uint8Array<ArrayBuffer>
 let animationFrame: number
 
 function setupAudioAnalyser() {
