@@ -71,7 +71,16 @@ export default defineNuxtConfig({
   features: {
     noScripts: false,
   },
-  compatibilityDate: '2025-04-13',
+  compatibilityDate: '2026-02-10',
+  nitro: {
+    experimental: {
+      openAPI: false,
+    },
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
+  },
   vite: {
     plugins: [
       devtoolsJson(),
@@ -120,6 +129,8 @@ export default defineNuxtConfig({
     },
   },
   sitemap: {
-    sources: ['/api/sitemap'],
+    sources: [
+      '/api/sitemap',
+    ],
   },
 })
