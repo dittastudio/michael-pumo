@@ -38,10 +38,10 @@ onMounted(async () => {
   <div
     ref="container"
     v-editable="block"
-    class="w-full md:min-h-svh grid md:grid-cols-2"
+    class="w-full lg:min-h-svh grid lg:grid-cols-2"
     :class="background"
   >
-    <div class="w-full min-h-svh md:min-h-auto p-gutter flex gap-10 flex-col items-start justify-between">
+    <div class="w-full min-h-svh lg:min-h-auto p-gutter flex gap-10 flex-col items-start justify-between">
       <EffectFadeReveal
         v-if="block.signal"
         :delay="2200"
@@ -88,7 +88,7 @@ onMounted(async () => {
       </EffectFadeReveal>
     </div>
 
-    <div class="relative">
+    <div class="relative overflow-hidden">
       <div
         class="absolute top-0 left-0 z-10 size-full bg-secondary transition-[width] duration-1000 ease-outQuart"
         :class="{
@@ -98,14 +98,17 @@ onMounted(async () => {
 
       <NuxtImg
         v-if="block.media?.filename && storyblokAssetType(block.media.filename) === 'image'"
-        class="w-full h-full object-cover"
+        class="size-full lg:object-cover lg:absolute lg:inset-0 transition-transform duration-1500 ease-outQuart"
+        :class="{
+          'scale-110': !ready,
+        }"
         :src="block.media.filename"
         provider="storyblok"
         width="1000"
         format="webp"
         quality="85"
         :modifiers="{ smart: true }"
-        alt="Michael Pumo - Freelance Web Developer and Designer in London"
+        :alt="block.media?.alt || 'Michael Pumo - Freelance Web Developer and Designer in London'"
       />
     </div>
   </div>
