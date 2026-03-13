@@ -15,17 +15,17 @@ const background = block.background as 'bg-primary' | 'bg-secondary'
     class="w-full px-gutter py-gutter-xl"
     :class="background"
   >
-    <div class="w-full mx-auto md:max-w-153.75">
+    <div class="wrapper mx-auto flex flex-col gap-10 md:gap-20">
       <h3
         v-if="block.headline"
-        class="text-18 mb-2"
+        class="text-18"
       >
         {{ block.headline }}
       </h3>
 
       <EffectTextFiller
         v-if="storyblokRichTextContent(block.text)"
-        class="[&_:is(p):not(:last-child)]:mb-7 text-tertiary text-24 sm:text-26"
+        class="[&_:is(p):not(:last-child)]:mb-10 text-tertiary text-fluid-30-56 font-light"
       >
         <StoryblokText :html="block.text" />
       </EffectTextFiller>

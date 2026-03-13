@@ -1,4 +1,4 @@
-@layer theme {
+@layer base {
   * {
     accent-color: var(--color-accent);
   }
@@ -49,17 +49,20 @@
     text-decoration-thickness: 0.025rem;
   }
 
-  .wrapper {
-    width: 100%;
-    max-width: var(--breakpoint-xl);
-    margin-inline: auto;
+  button {
+    text-transform: inherit;
+    letter-spacing: inherit;
+    touch-action: manipulation;
+    user-select: none;
+    cursor: pointer;
 
-    &-x {
-      padding-inline: var(--app-outer-gutter);
+    &:disabled {
+      cursor: not-allowed;
     }
+  }
 
-    &-y {
-      padding-block: var(--app-outer-gutter);
-    }
+  svg {
+    display: block;
+    fill: currentcolor;
   }
 }

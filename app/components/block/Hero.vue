@@ -52,7 +52,7 @@ onMounted(async () => {
       <div class="@container/hero-content w-full my-auto flex gap-7 flex-col items-start justify-center">
         <EffectTextReveal
           v-if="block.headline"
-          class="text-tertiary max-w-[18ch] text-36 @md/hero-content:text-48 text-pretty"
+          class="text-tertiary max-w-[18ch] text-fluid-36-64 text-pretty font-light"
           tag="h1"
           :delay="200"
         >

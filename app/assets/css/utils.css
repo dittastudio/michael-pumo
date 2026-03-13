@@ -33,3 +33,9 @@
 
   animation: rotate-angle 5s linear infinite;
 }
+
+@utility wrapper {
+  width: 100%;
+  max-width: var(--breakpoint-xl);
+  margin-inline: auto;
+}
