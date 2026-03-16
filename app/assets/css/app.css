@@ -1,8 +1,8 @@
+@import "tailwindcss";
 @import "./page.css";
 @import "./fonts.css";
 @import "./transitions.css";
 @import "./utils.css";
-@import "tailwindcss";
 
 @source inline('text-accent');
 @source inline('text-24');
@@ -18,7 +18,7 @@
   
   --color-grey: #808080;
   --color-pink: #FFA4D2;
-  --color-peach: #FFBCA4;  
+  --color-peach: #fb8989;  
   --color-blue: #0c8ce9;
   --color-green: #C1FFA5;
   --color-purple: #f1a3ff;
