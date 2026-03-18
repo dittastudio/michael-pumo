@@ -2,8 +2,7 @@
   "workbench.editorAssociations": { "*.svg": "default" },
   "eslint.useFlatConfig": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "typescript.suggest.autoImports": false,
-  "javascript.suggest.autoImports": false,
+  "js/ts.suggest.autoImports": false,
   "files.associations": {
     "*.css": "tailwindcss"
   },
